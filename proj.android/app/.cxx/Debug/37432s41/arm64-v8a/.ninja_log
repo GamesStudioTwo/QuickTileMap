@@ -3011,3 +3011,4 @@
 59685	62627	7416406949566688	engine/extensions/cocostudio/CMakeFiles/cocostudio.dir/src/cocostudio/WidgetReader/WidgetReader.cpp.o	505411dcba40a819
 62627	62772	7416406951028020	lib/libcocostudio.a	1f273a18e147169a
 62772	63288	7416406954701364	../../../../build/intermediates/cxx/Debug/37432s41/obj/arm64-v8a/libQuickTileMap.so	fd80a24a043c9012
+0	524	0	clean	783ee98371267ada
