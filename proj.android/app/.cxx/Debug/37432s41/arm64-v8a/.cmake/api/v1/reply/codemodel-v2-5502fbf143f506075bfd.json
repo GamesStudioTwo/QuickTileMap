@@ -1,0 +1,1634 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						7,
+						9
+					]
+				},
+				{
+					"build" : "engine/axmol/core",
+					"childIndexes" : 
+					[
+						2,
+						36,
+						50
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-engine.axmol.core-Debug-9f070e9b72f7fec10e43.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/core",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "engine/3rdparty",
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						10,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-engine.3rdparty-Debug-f47eda791d80ec30a18a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty"
+				},
+				{
+					"build" : "engine/3rdparty/fmt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-engine.3rdparty.fmt-Debug-3f44f4afe47832d46306.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt",
+					"targetIndexes" : 
+					[
+						25
+					]
+				},
+				{
+					"build" : "engine/3rdparty/android-specific/cpufeatures",
+					"jsonFile" : "directory-engine.3rdparty.android-specific.cpufeatures-Debug-a78ac3c43853d2a17708.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 4,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/android-specific/cpufeatures",
+					"targetIndexes" : 
+					[
+						22
+					]
+				},
+				{
+					"build" : "engine/3rdparty/zlib",
+					"jsonFile" : "directory-engine.3rdparty.zlib-Debug-b304acb11d3fc78d9d49.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 5,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/zlib"
+				},
+				{
+					"build" : "engine/3rdparty/websocket-parser",
+					"jsonFile" : "directory-engine.3rdparty.websocket-parser-Debug-4a942c1779b2182e4e25.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 6,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/websocket-parser",
+					"targetIndexes" : 
+					[
+						43
+					]
+				},
+				{
+					"build" : "engine/3rdparty/png",
+					"jsonFile" : "directory-engine.3rdparty.png-Debug-2b8f75ee6653f45cabe4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 7,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/png",
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"build" : "engine/3rdparty/box2d",
+					"childIndexes" : 
+					[
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-engine.3rdparty.box2d-Debug-39d24b9378441aee37ef.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 8,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/box2d"
+				},
+				{
+					"build" : "engine/3rdparty/box2d/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-engine.3rdparty.box2d.src-Debug-6f514d5a739a67e3169b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 8,
+					"projectIndex" : 8,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/box2d/src",
+					"targetIndexes" : 
+					[
+						16
+					]
+				},
+				{
+					"build" : "engine/3rdparty/chipmunk",
+					"childIndexes" : 
+					[
+						11
+					],
+					"jsonFile" : "directory-engine.3rdparty.chipmunk-Debug-54bdcbe961f5d1f411b1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 9,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk"
+				},
+				{
+					"build" : "engine/3rdparty/chipmunk/src",
+					"jsonFile" : "directory-engine.3rdparty.chipmunk.src-Debug-42735332bd5254d4681e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 10,
+					"projectIndex" : 9,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "engine/3rdparty/freetype",
+					"jsonFile" : "directory-engine.3rdparty.freetype-Debug-ff728ddef66aa48369e9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 10,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/freetype",
+					"targetIndexes" : 
+					[
+						26
+					]
+				},
+				{
+					"build" : "engine/3rdparty/recast",
+					"jsonFile" : "directory-engine.3rdparty.recast-Debug-d0648c55b520b8282089.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 11,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/recast",
+					"targetIndexes" : 
+					[
+						37
+					]
+				},
+				{
+					"build" : "engine/3rdparty/bullet",
+					"jsonFile" : "directory-engine.3rdparty.bullet-Debug-ac4de7f527e6681ab17e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 12,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/bullet",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "engine/3rdparty/jpeg-turbo",
+					"jsonFile" : "directory-engine.3rdparty.jpeg-turbo-Debug-e3fb66142c1c16624f0c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 13,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/jpeg-turbo"
+				},
+				{
+					"build" : "engine/3rdparty/openssl",
+					"jsonFile" : "directory-engine.3rdparty.openssl-Debug-ec395d35a2983352ad1c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 14,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openssl"
+				},
+				{
+					"build" : "engine/3rdparty/webp",
+					"jsonFile" : "directory-engine.3rdparty.webp-Debug-734a77800769f9d3d4e1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 15,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/webp",
+					"targetIndexes" : 
+					[
+						42
+					]
+				},
+				{
+					"build" : "engine/3rdparty/pugixml",
+					"jsonFile" : "directory-engine.3rdparty.pugixml-Debug-79a83539a00932807cb8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 16,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/pugixml",
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"build" : "engine/3rdparty/xxhash",
+					"jsonFile" : "directory-engine.3rdparty.xxhash-Debug-417da66ca890f06da31a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 17,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/xxhash",
+					"targetIndexes" : 
+					[
+						44
+					]
+				},
+				{
+					"build" : "engine/3rdparty/fastlz",
+					"jsonFile" : "directory-engine.3rdparty.fastlz-Debug-e7eed8b320cae9883a37.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 18,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fastlz",
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"build" : "engine/3rdparty/clipper2",
+					"jsonFile" : "directory-engine.3rdparty.clipper2-Debug-565a013d547822837ec4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 19,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/clipper2",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "engine/3rdparty/ConvertUTF",
+					"jsonFile" : "directory-engine.3rdparty.ConvertUTF-Debug-1a9c1ae6335a105fc722.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 20,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/ConvertUTF",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "engine/3rdparty/poly2tri",
+					"jsonFile" : "directory-engine.3rdparty.poly2tri-Debug-a841a802fe16aa7e904d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 21,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/poly2tri",
+					"targetIndexes" : 
+					[
+						35
+					]
+				},
+				{
+					"build" : "engine/3rdparty/astcenc",
+					"jsonFile" : "directory-engine.3rdparty.astcenc-Debug-7d3e5c1c167bbf364800.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 22,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "engine/3rdparty/lua/plainlua",
+					"jsonFile" : "directory-engine.3rdparty.lua.plainlua-Debug-e4123c13fdfbcbebf82b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 23,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/lua/plainlua",
+					"targetIndexes" : 
+					[
+						33
+					]
+				},
+				{
+					"build" : "engine/3rdparty/lua/tolua",
+					"jsonFile" : "directory-engine.3rdparty.lua.tolua-Debug-d3ffd000b35a6be326ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 24,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/lua/tolua",
+					"targetIndexes" : 
+					[
+						40
+					]
+				},
+				{
+					"build" : "engine/3rdparty/lua/lua-cjson",
+					"jsonFile" : "directory-engine.3rdparty.lua.lua-cjson-Debug-c4fafb82eb9311f70f5c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 25,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/lua/lua-cjson",
+					"targetIndexes" : 
+					[
+						29
+					]
+				},
+				{
+					"build" : "engine/3rdparty/curl",
+					"jsonFile" : "directory-engine.3rdparty.curl-Debug-6402cd578526cdd14793.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 26,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/curl"
+				},
+				{
+					"build" : "engine/3rdparty/openal",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-engine.3rdparty.openal-Debug-a5c398467c62b81ceb46.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 27,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal",
+					"targetIndexes" : 
+					[
+						6,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "engine/3rdparty/ogg",
+					"jsonFile" : "directory-engine.3rdparty.ogg-Debug-ccd92f6fc718d5cc5587.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 28,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/ogg",
+					"targetIndexes" : 
+					[
+						30
+					]
+				},
+				{
+					"build" : "engine/3rdparty/glad",
+					"jsonFile" : "directory-engine.3rdparty.glad-Debug-a66f0b1d9d734e65ba53.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 29,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/glad",
+					"targetIndexes" : 
+					[
+						27
+					]
+				},
+				{
+					"build" : "engine/3rdparty/unzip",
+					"jsonFile" : "directory-engine.3rdparty.unzip-Debug-bdf85e925c8cd3dceecd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 30,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/unzip",
+					"targetIndexes" : 
+					[
+						41
+					]
+				},
+				{
+					"build" : "engine/3rdparty/llhttp",
+					"jsonFile" : "directory-engine.3rdparty.llhttp-Debug-d3e177d5c71e0795f238.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 31,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/llhttp",
+					"targetIndexes" : 
+					[
+						28
+					]
+				},
+				{
+					"build" : "engine/3rdparty/yasio",
+					"jsonFile" : "directory-engine.3rdparty.yasio-Debug-713608f2c7ccd6dd843a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 32,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio",
+					"targetIndexes" : 
+					[
+						45
+					]
+				},
+				{
+					"build" : "engine/3rdparty/simdjson",
+					"jsonFile" : "directory-engine.3rdparty.simdjson-Debug-57ed9b3d1cbdaeef1516.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 33,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/simdjson",
+					"targetIndexes" : 
+					[
+						38
+					]
+				},
+				{
+					"build" : "engine/extensions",
+					"childIndexes" : 
+					[
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49
+					],
+					"jsonFile" : "directory-engine.extensions-Debug-d3ca6de7b1ce1d4fbe32.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions"
+				},
+				{
+					"build" : "engine/extensions/GUI",
+					"jsonFile" : "directory-engine.extensions.GUI-Debug-1ab02d800495bd665870.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/GUI",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "engine/extensions/assets-manager",
+					"jsonFile" : "directory-engine.extensions.assets-manager-Debug-46b399b6df405cf4b4e5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/assets-manager",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "engine/extensions/Particle3D",
+					"jsonFile" : "directory-engine.extensions.Particle3D-Debug-e0a1b402a4a6077e9a51.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/Particle3D",
+					"targetIndexes" : 
+					[
+						31
+					]
+				},
+				{
+					"build" : "engine/extensions/physics-nodes",
+					"jsonFile" : "directory-engine.extensions.physics-nodes-Debug-4dc7329353157d76ed97.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/physics-nodes",
+					"targetIndexes" : 
+					[
+						32
+					]
+				},
+				{
+					"build" : "engine/extensions/spine",
+					"jsonFile" : "directory-engine.extensions.spine-Debug-79afdb9a34e1541fb82a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/spine",
+					"targetIndexes" : 
+					[
+						39
+					]
+				},
+				{
+					"build" : "engine/extensions/DragonBones",
+					"jsonFile" : "directory-engine.extensions.DragonBones-Debug-ef467ea1fd6d2fc89095.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/DragonBones",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "engine/extensions/fairygui",
+					"jsonFile" : "directory-engine.extensions.fairygui-Debug-763d41ff920bbf5ac3ca.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/fairygui",
+					"targetIndexes" : 
+					[
+						23
+					]
+				},
+				{
+					"build" : "engine/extensions/ImGui",
+					"jsonFile" : "directory-engine.extensions.ImGui-Debug-b621c420d211d21e66c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/ImGui",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "engine/extensions/Inspector",
+					"jsonFile" : "directory-engine.extensions.Inspector-Debug-718ca8c6731846387929.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/Inspector",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "engine/extensions/SDFGen",
+					"jsonFile" : "directory-engine.extensions.SDFGen-Debug-fb527db2d5c117b558d5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/SDFGen",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "engine/extensions/cocostudio",
+					"jsonFile" : "directory-engine.extensions.cocostudio-Debug-b7a87bf6dcad2127aa87.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/cocostudio",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "engine/extensions/scripting/lua-bindings",
+					"jsonFile" : "directory-engine.extensions.scripting.lua-bindings-Debug-9813c70a4c91528d5d5b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/scripting/lua-bindings",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "engine/extensions/JSONDefault",
+					"jsonFile" : "directory-engine.extensions.JSONDefault-Debug-7a4310fd419dd7987d10.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 36,
+					"projectIndex" : 1,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/JSONDefault",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "engine/core/cpp-android",
+					"jsonFile" : "directory-engine.core.cpp-android-Debug-b2f73bb9d462f404aac6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 34,
+					"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/core/platform/android",
+					"targetIndexes" : 
+					[
+						21
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QuickTileMap",
+					"targetIndexes" : 
+					[
+						7,
+						9
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						34
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49
+					],
+					"name" : "ax_libs",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						8,
+						12,
+						14,
+						15,
+						20,
+						23,
+						31,
+						32,
+						39
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "3rdparty",
+					"parentIndex" : 1
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "FMT",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						25
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "cpufeatures",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "zlib",
+					"parentIndex" : 2
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "websocket-parser",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						43
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "png",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8,
+						9
+					],
+					"name" : "box2d",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						16
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						10,
+						11
+					],
+					"name" : "chipmunk",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						12
+					],
+					"name" : "freetype",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						26
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						13
+					],
+					"name" : "recast",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						37
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						14
+					],
+					"name" : "bullet",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "jpeg-turbo",
+					"parentIndex" : 2
+				},
+				{
+					"directoryIndexes" : 
+					[
+						16
+					],
+					"name" : "openssl",
+					"parentIndex" : 2
+				},
+				{
+					"directoryIndexes" : 
+					[
+						17
+					],
+					"name" : "webp",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						42
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						18
+					],
+					"name" : "pugixml",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						19
+					],
+					"name" : "xxhash",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						44
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						20
+					],
+					"name" : "fastlz",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						21
+					],
+					"name" : "clipper2",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						22
+					],
+					"name" : "ConvertUTF",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						23
+					],
+					"name" : "poly2tri",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						35
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						24
+					],
+					"name" : "astcenc",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						25
+					],
+					"name" : "plainlua",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						33
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						26
+					],
+					"name" : "tolua",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						40
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						27
+					],
+					"name" : "lua-cjson",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						29
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						28
+					],
+					"name" : "curl",
+					"parentIndex" : 2
+				},
+				{
+					"directoryIndexes" : 
+					[
+						29
+					],
+					"name" : "OpenAL",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						6,
+						10,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						30
+					],
+					"name" : "ogg",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						30
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						31
+					],
+					"name" : "glad",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						27
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						32
+					],
+					"name" : "unzip",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						41
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						33
+					],
+					"name" : "llhttp",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						28
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						34
+					],
+					"name" : "yasio",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						45
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						35
+					],
+					"name" : "simdjson",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						38
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						50
+					],
+					"name" : "cpp_android_spec",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						21
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 22,
+					"id" : "ConvertUTF::@8ef87820ac91d1b1aaab",
+					"jsonFile" : "target-ConvertUTF-Debug-d6d0679de76b8f8cdae3.json",
+					"name" : "ConvertUTF",
+					"projectIndex" : 20
+				},
+				{
+					"directoryIndex" : 42,
+					"id" : "DragonBones::@10d352b61c57d6d47c94",
+					"jsonFile" : "target-DragonBones-Debug-44e283499a0ffa304310.json",
+					"name" : "DragonBones",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 37,
+					"id" : "GUI::@c83b264aaa1ba36fccf5",
+					"jsonFile" : "target-GUI-Debug-9919a35b2088fbb686d1.json",
+					"name" : "GUI",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 44,
+					"id" : "ImGui::@d0e2a35dca395913b7fc",
+					"jsonFile" : "target-ImGui-Debug-93ce2be73492ec0a53d4.json",
+					"name" : "ImGui",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 45,
+					"id" : "Inspector::@2394cd5c82b431a09147",
+					"jsonFile" : "target-Inspector-Debug-7e9451ce8affdc5374e7.json",
+					"name" : "Inspector",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 49,
+					"id" : "JSONDefault::@25c6db9f7dafab02d272",
+					"jsonFile" : "target-JSONDefault-Debug-e84d40c900d0df26be91.json",
+					"name" : "JSONDefault",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 29,
+					"id" : "OpenAL::@1c3fe5358577ba279a79",
+					"jsonFile" : "target-OpenAL-Debug-5f243e48bbe6e1cd278d.json",
+					"name" : "OpenAL",
+					"projectIndex" : 27
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QuickTileMap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QuickTileMap-Debug-9e2e692d85e205fce52e.json",
+					"name" : "QuickTileMap",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 46,
+					"id" : "SDFGen::@7666503695ed4edf3091",
+					"jsonFile" : "target-SDFGen-Debug-ed62d8f724999acf0b08.json",
+					"name" : "SDFGen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SYNC_RESOURCE-QuickTileMap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SYNC_RESOURCE-QuickTileMap-Debug-0666ed9b75bb8306dc07.json",
+					"name" : "SYNC_RESOURCE-QuickTileMap",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 29,
+					"id" : "al-excommon::@1c3fe5358577ba279a79",
+					"jsonFile" : "target-al-excommon-Debug-8243138b1c521bbc99ab.json",
+					"name" : "al-excommon",
+					"projectIndex" : 27
+				},
+				{
+					"directoryIndex" : 29,
+					"id" : "alcommon::@1c3fe5358577ba279a79",
+					"jsonFile" : "target-alcommon-Debug-e965c030d636d40e8caa.json",
+					"name" : "alcommon",
+					"projectIndex" : 27
+				},
+				{
+					"directoryIndex" : 38,
+					"id" : "assets-manager::@9dcd82ccb90758d64515",
+					"jsonFile" : "target-assets-manager-Debug-a3f2d03c7dd6f14dd7ae.json",
+					"name" : "assets-manager",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 24,
+					"id" : "astcenc::@730cd7a4979c4081e0bb",
+					"jsonFile" : "target-astcenc-Debug-4747f541db6ed0935c8a.json",
+					"name" : "astcenc",
+					"projectIndex" : 22
+				},
+				{
+					"directoryIndex" : 48,
+					"id" : "axlua::@04afe047421f8d35c5b0",
+					"jsonFile" : "target-axlua-Debug-8eae7e0dea02ac4fa520.json",
+					"name" : "axlua",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "axmol::@bf69472f26d8c3f79a15",
+					"jsonFile" : "target-axmol-Debug-b2c90e93134c988d75b6.json",
+					"name" : "axmol",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "box2d::@74bfe10965d3ff76ccbb",
+					"jsonFile" : "target-box2d-Debug-b4586c5ecd197a287bf9.json",
+					"name" : "box2d",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "bullet::@067658e0fbb0fb148693",
+					"jsonFile" : "target-bullet-Debug-66b6ac4327dde69339dd.json",
+					"name" : "bullet",
+					"projectIndex" : 12
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "chipmunk::@e030cd6fde125c56595a",
+					"jsonFile" : "target-chipmunk-Debug-82e3e2a26765f7d96885.json",
+					"name" : "chipmunk",
+					"projectIndex" : 9
+				},
+				{
+					"directoryIndex" : 21,
+					"id" : "clipper2::@3fd6c85fdb7182944ebd",
+					"jsonFile" : "target-clipper2-Debug-6d3adc6a6d41af1e240d.json",
+					"name" : "clipper2",
+					"projectIndex" : 19
+				},
+				{
+					"directoryIndex" : 47,
+					"id" : "cocostudio::@60c66ce02398592d0763",
+					"jsonFile" : "target-cocostudio-Debug-53a509a9e6ff1b1f7c21.json",
+					"name" : "cocostudio",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 50,
+					"id" : "cpp_android_spec::@399633093cdc7e320adf",
+					"jsonFile" : "target-cpp_android_spec-Debug-ed09b1711025cd2acf63.json",
+					"name" : "cpp_android_spec",
+					"projectIndex" : 34
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cpufeatures::@231aa10ceab92dd529f0",
+					"jsonFile" : "target-cpufeatures-Debug-168c75ab8b82c840084d.json",
+					"name" : "cpufeatures",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 43,
+					"id" : "fairygui::@f06704b5f80aeca1aefb",
+					"jsonFile" : "target-fairygui-Debug-9b0104404d7dc88bffbe.json",
+					"name" : "fairygui",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 20,
+					"id" : "fastlz::@d215ee184e8bbb0fbbe4",
+					"jsonFile" : "target-fastlz-Debug-c419642a8ac3750e1d0d.json",
+					"name" : "fastlz",
+					"projectIndex" : 18
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "fmt::@172b82096f85eddb0020",
+					"jsonFile" : "target-fmt-Debug-ac7fd26cdac4954e8604.json",
+					"name" : "fmt",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "freetype::@b20ff8c2dc78e0658ee3",
+					"jsonFile" : "target-freetype-Debug-90f54494cbe45ecda274.json",
+					"name" : "freetype",
+					"projectIndex" : 10
+				},
+				{
+					"directoryIndex" : 31,
+					"id" : "glad::@b0b000e275056f88e885",
+					"jsonFile" : "target-glad-Debug-7078c9a4a35ef41a6255.json",
+					"name" : "glad",
+					"projectIndex" : 29
+				},
+				{
+					"directoryIndex" : 33,
+					"id" : "llhttp::@c4737d653051f9356e20",
+					"jsonFile" : "target-llhttp-Debug-012ae0dd1af44237adb9.json",
+					"name" : "llhttp",
+					"projectIndex" : 31
+				},
+				{
+					"directoryIndex" : 27,
+					"id" : "lua-cjson::@c21850963483ce16ab32",
+					"jsonFile" : "target-lua-cjson-Debug-81f07deb2be059e5f197.json",
+					"name" : "lua-cjson",
+					"projectIndex" : 25
+				},
+				{
+					"directoryIndex" : 30,
+					"id" : "ogg::@6fb0191cdcece2d50006",
+					"jsonFile" : "target-ogg-Debug-e5f30879708350513ef1.json",
+					"name" : "ogg",
+					"projectIndex" : 28
+				},
+				{
+					"directoryIndex" : 39,
+					"id" : "particle3d::@6723bbaaff3124d2c47d",
+					"jsonFile" : "target-particle3d-Debug-135c4125f3ceb7fb743d.json",
+					"name" : "particle3d",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 40,
+					"id" : "physics-nodes::@74d1a12157aa0bc3fb31",
+					"jsonFile" : "target-physics-nodes-Debug-11a4587f1c9cf4945bd6.json",
+					"name" : "physics-nodes",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 25,
+					"id" : "plainlua::@98ee9c76c2e53d04c1ec",
+					"jsonFile" : "target-plainlua-Debug-7950648ae53bbc9ff535.json",
+					"name" : "plainlua",
+					"projectIndex" : 23
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "png::@36cc07a3e1ba7c2bde31",
+					"jsonFile" : "target-png-Debug-4761b040ca59b770a5d1.json",
+					"name" : "png",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 23,
+					"id" : "poly2tri::@078c79c6faf9714b8627",
+					"jsonFile" : "target-poly2tri-Debug-04dcdb71e7123eeeb498.json",
+					"name" : "poly2tri",
+					"projectIndex" : 21
+				},
+				{
+					"directoryIndex" : 18,
+					"id" : "pugixml::@a71f8eacd2382805b307",
+					"jsonFile" : "target-pugixml-Debug-08758bd232cdeccef131.json",
+					"name" : "pugixml",
+					"projectIndex" : 16
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "recast::@daa12a0718eb5667b377",
+					"jsonFile" : "target-recast-Debug-c73d36654dc86d67dbb9.json",
+					"name" : "recast",
+					"projectIndex" : 11
+				},
+				{
+					"directoryIndex" : 35,
+					"id" : "simdjson::@bfa1e1ea590cf53af7d7",
+					"jsonFile" : "target-simdjson-Debug-9494b62502cf3681e414.json",
+					"name" : "simdjson",
+					"projectIndex" : 33
+				},
+				{
+					"directoryIndex" : 41,
+					"id" : "spine::@25f68d044ed9243d3c7c",
+					"jsonFile" : "target-spine-Debug-b5f02db46e08e15bb7f3.json",
+					"name" : "spine",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 26,
+					"id" : "tolua::@73310b5a34b7997bbabb",
+					"jsonFile" : "target-tolua-Debug-18f511f83aa7b02daebd.json",
+					"name" : "tolua",
+					"projectIndex" : 24
+				},
+				{
+					"directoryIndex" : 32,
+					"id" : "unzip::@6d5ba6f3a180a514ac31",
+					"jsonFile" : "target-unzip-Debug-1bde9d8ab830e26b317b.json",
+					"name" : "unzip",
+					"projectIndex" : 30
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "webp::@c74d47a8972f79274125",
+					"jsonFile" : "target-webp-Debug-ef8ed9e448b2cda8cf13.json",
+					"name" : "webp",
+					"projectIndex" : 15
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "websocket-parser::@7dd8a899c4dcd334c423",
+					"jsonFile" : "target-websocket-parser-Debug-7974638851f4f770ec54.json",
+					"name" : "websocket-parser",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 19,
+					"id" : "xxhash::@756c2fb412866390bb07",
+					"jsonFile" : "target-xxhash-Debug-715ec637a640c10f0b5b.json",
+					"name" : "xxhash",
+					"projectIndex" : 17
+				},
+				{
+					"directoryIndex" : 34,
+					"id" : "yasio::@a7174f46b4b9a2b4a7bf",
+					"jsonFile" : "target-yasio-Debug-889f8cae80755d5b3080.json",
+					"name" : "yasio",
+					"projectIndex" : 32
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Admin/Documents/QuickTileMap/proj.android/app/.cxx/Debug/37432s41/arm64-v8a",
+		"source" : "C:/Users/Admin/Documents/QuickTileMap"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

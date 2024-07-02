@@ -1,0 +1,85 @@
+{
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"ax_def_sync_resource_target",
+			"ax_sync_target_res"
+		],
+		"files" : 
+		[
+			"C:/Users/Admin/Documents/Cocos/axmol-dev/cmake/Modules/AXBuildHelpers.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 219,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 27,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 57,
+				"parent" : 2
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "Utils"
+	},
+	"id" : "SYNC_RESOURCE-QuickTileMap::@6890427a1f51a3e7e1df",
+	"name" : "SYNC_RESOURCE-QuickTileMap",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"isGenerated" : true,
+			"path" : "proj.android/app/.cxx/Debug/37432s41/arm64-v8a/CMakeFiles/SYNC_RESOURCE-QuickTileMap",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "proj.android/app/.cxx/Debug/37432s41/arm64-v8a/CMakeFiles/SYNC_RESOURCE-QuickTileMap.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

@@ -1,0 +1,413 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/libalcommon.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_compile_options",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1339,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1342,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 1341,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 1340,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fno-char8_t -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -fno-limit-debug-info  -fPIC -fvisibility=hidden"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Winline"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wunused"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wconversion"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wpedantic"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wold-style-cast"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wnon-virtual-dtor"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Woverloaded-virtual"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-Wno-c++20-extensions"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-pthread"
+				},
+				{
+					"fragment" : "-std=c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "RESTRICT=__restrict"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Admin/Documents/QuickTileMap/proj.android/app/.cxx/Debug/37432s41/arm64-v8a/engine/3rdparty/openal"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					0
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				1,
+				4,
+				6,
+				10,
+				13,
+				15,
+				20,
+				25,
+				28,
+				30
+			],
+			"sysroot" : 
+			{
+				"path" : "C:/Users/Admin/AppData/Local/Android/Sdk/ndk/23.2.8568313/toolchains/llvm/prebuilt/windows-x86_64/sysroot"
+			}
+		}
+	],
+	"folder" : 
+	{
+		"name" : "3rdparty"
+	},
+	"id" : "alcommon::@1c3fe5358577ba279a79",
+	"name" : "alcommon",
+	"nameOnDisk" : "libalcommon.a",
+	"paths" : 
+	{
+		"build" : "engine/3rdparty/openal",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				3,
+				5,
+				7,
+				8,
+				9,
+				11,
+				12,
+				14,
+				16,
+				17,
+				18,
+				19,
+				21,
+				22,
+				23,
+				24,
+				26,
+				27,
+				29,
+				31,
+				32,
+				33
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				4,
+				6,
+				10,
+				13,
+				15,
+				20,
+				25,
+				28,
+				30
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/albit.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alcomplex.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alcomplex.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/aldeque.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alfstream.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alfstream.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/almalloc.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/almalloc.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alnumbers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alnumeric.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alsem.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alsem.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alspan.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alstring.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/alstring.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/althrd_setname.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/althrd_setname.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/altraits.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/atomic.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/comptr.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/dynload.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/dynload.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/intrusive_ptr.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/opthelpers.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/phase_shifter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/polyphase_resampler.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/polyphase_resampler.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/pragmadefs.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/ringbuffer.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/ringbuffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/strutils.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/strutils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/vecmat.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openal/common/vector.h",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

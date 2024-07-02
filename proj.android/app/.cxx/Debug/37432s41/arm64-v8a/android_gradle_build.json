@@ -1,0 +1,376 @@
+{
+  "buildFiles": [
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\android-specific\\cpufeatures\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\astcenc\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\box2d\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\box2d\\src\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\bullet\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\chipmunk\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\chipmunk\\src\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\clipper2\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\ConvertUTF\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\curl\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\fastlz\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\fmt\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\freetype\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\glad\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\jpeg-turbo\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\llhttp\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\lua\\lua-cjson\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\lua\\plainlua\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\lua\\tolua\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\ogg\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\openal\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\openssl\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\png\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\poly2tri\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\pugixml\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\recast\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\simdjson\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\unzip\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\webp\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\websocket-parser\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\xxhash\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\yasio\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\3rdparty\\zlib\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\2d\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\3d\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\audio\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\base\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\math\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\navmesh\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\network\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\physics3d\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\physics\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\platform\\android\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\platform\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\renderer\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\core\\ui\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\assets-manager\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\cocostudio\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\DragonBones\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\fairygui\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\GUI\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\ImGui\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\Inspector\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\JSONDefault\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\Particle3D\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\physics-nodes\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\scripting\\lua-bindings\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\SDFGen\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\Cocos\\axmol-dev\\extensions\\spine\\CMakeLists.txt",
+    "C:\\Users\\Admin\\Documents\\QuickTileMap\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ConvertUTF::@8ef87820ac91d1b1aaab": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ConvertUTF",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libConvertUTF.a"
+    },
+    "DragonBones::@10d352b61c57d6d47c94": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "DragonBones",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libDragonBones.a"
+    },
+    "GUI::@c83b264aaa1ba36fccf5": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "GUI",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libGUI.a"
+    },
+    "ImGui::@d0e2a35dca395913b7fc": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ImGui",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libImGui.a"
+    },
+    "Inspector::@2394cd5c82b431a09147": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "Inspector",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libInspector.a"
+    },
+    "JSONDefault::@25c6db9f7dafab02d272": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "JSONDefault",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libJSONDefault.a"
+    },
+    "OpenAL::@1c3fe5358577ba279a79": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "OpenAL",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libopenal.so",
+      "runtimeFiles": []
+    },
+    "QuickTileMap::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "QuickTileMap",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\build\\intermediates\\cxx\\Debug\\37432s41\\obj\\arm64-v8a\\libQuickTileMap.so",
+      "runtimeFiles": [
+        "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libopenal.so"
+      ]
+    },
+    "SDFGen::@7666503695ed4edf3091": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "SDFGen",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libSDFGen.a"
+    },
+    "SYNC_RESOURCE-QuickTileMap::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "SYNC_RESOURCE-QuickTileMap"
+    },
+    "al-excommon::@1c3fe5358577ba279a79": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "al-excommon",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\engine\\3rdparty\\openal\\libal-excommon.a"
+    },
+    "alcommon::@1c3fe5358577ba279a79": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "alcommon",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libalcommon.a"
+    },
+    "assets-manager::@9dcd82ccb90758d64515": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "assets-manager",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libassets-manager.a"
+    },
+    "astcenc::@730cd7a4979c4081e0bb": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "astcenc",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libastcenc.a"
+    },
+    "axlua::@04afe047421f8d35c5b0": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "axlua",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libaxlua.a"
+    },
+    "axmol::@bf69472f26d8c3f79a15": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "axmol",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libaxmol.a"
+    },
+    "box2d::@74bfe10965d3ff76ccbb": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "box2d",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libbox2d.a"
+    },
+    "bullet::@067658e0fbb0fb148693": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "bullet",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libbullet.a"
+    },
+    "chipmunk::@e030cd6fde125c56595a": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "chipmunk",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libchipmunk.a"
+    },
+    "clipper2::@3fd6c85fdb7182944ebd": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "clipper2",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libclipper2.a"
+    },
+    "cocostudio::@60c66ce02398592d0763": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "cocostudio",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libcocostudio.a"
+    },
+    "cpp_android_spec::@399633093cdc7e320adf": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "cpp_android_spec",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\engine\\core\\cpp-android\\libcpp_android_spec.a"
+    },
+    "cpufeatures::@231aa10ceab92dd529f0": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "cpufeatures",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\engine\\3rdparty\\android-specific\\cpufeatures\\libcpufeatures.a"
+    },
+    "fairygui::@f06704b5f80aeca1aefb": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "fairygui",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libfairygui.a"
+    },
+    "fastlz::@d215ee184e8bbb0fbbe4": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "fastlz",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libfastlz.a"
+    },
+    "fmt::@172b82096f85eddb0020": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "fmt",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libfmtd.a"
+    },
+    "freetype::@b20ff8c2dc78e0658ee3": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "freetype",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libfreetype.a"
+    },
+    "glad::@b0b000e275056f88e885": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "glad",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libglad.a"
+    },
+    "llhttp::@c4737d653051f9356e20": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "llhttp",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libllhttp.a"
+    },
+    "lua-cjson::@c21850963483ce16ab32": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "lua-cjson",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\liblua-cjson.a"
+    },
+    "ogg::@6fb0191cdcece2d50006": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "ogg",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libogg.a"
+    },
+    "particle3d::@6723bbaaff3124d2c47d": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "particle3d",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libparticle3d.a"
+    },
+    "physics-nodes::@74d1a12157aa0bc3fb31": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "physics-nodes",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libphysics-nodes.a"
+    },
+    "plainlua::@98ee9c76c2e53d04c1ec": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "plainlua",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libplainlua.a"
+    },
+    "png::@36cc07a3e1ba7c2bde31": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "png",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libpng.a"
+    },
+    "poly2tri::@078c79c6faf9714b8627": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "poly2tri",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libpoly2tri.a"
+    },
+    "pugixml::@a71f8eacd2382805b307": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "pugixml",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libpugixml.a"
+    },
+    "recast::@daa12a0718eb5667b377": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "recast",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\librecast.a"
+    },
+    "simdjson::@bfa1e1ea590cf53af7d7": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "simdjson",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libsimdjson.a"
+    },
+    "spine::@25f68d044ed9243d3c7c": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "spine",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libspine.a"
+    },
+    "tolua::@73310b5a34b7997bbabb": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "tolua",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libtolua.a"
+    },
+    "unzip::@6d5ba6f3a180a514ac31": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "unzip",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libunzip.a"
+    },
+    "webp::@c74d47a8972f79274125": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "webp",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libwebp.a"
+    },
+    "websocket-parser::@7dd8a899c4dcd334c423": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "websocket-parser",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libwebsocket-parser.a"
+    },
+    "xxhash::@756c2fb412866390bb07": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "xxhash",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libxxhash.a"
+    },
+    "yasio::@a7174f46b4b9a2b4a7bf": {
+      "toolchain": "toolchain",
+      "abi": "arm64-v8a",
+      "artifactName": "yasio",
+      "output": "C:\\Users\\Admin\\Documents\\QuickTileMap\\proj.android\\app\\.cxx\\Debug\\37432s41\\arm64-v8a\\lib\\libyasio.a"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\Admin\\AppData\\Local\\Android\\Sdk\\ndk\\23.2.8568313\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp",
+    "cxx",
+    "cc"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Map03.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map01.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.75,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": 863.3333333333335,
+                "y": 329.33333333333326
+            }
+        },
+        "Map01.tmx#TileMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Map03.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 506.5,
+                "y": 7973
+            }
+        },
+        "Map03.tmx#TileMap": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "TileMap.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "frame.defaultDuration": 260,
+    "last.imagePath": "C:/Users/Admin/Documents/QuickTileMap/GAME_ASSITS",
+    "last.objectTypesPath": "C:/Users/Admin/Documents/QuickTileMap/Content/Maps/propertytypes.json",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "openFiles": [
+        "Map03.tmx"
+    ],
+    "project": "NewProject.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "Map01.tmx",
+        "Map03.tmx",
+        "TileMap.tsx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

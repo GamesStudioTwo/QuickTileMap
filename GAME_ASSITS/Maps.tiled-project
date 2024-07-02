@@ -1,0 +1,1239 @@
+{
+    "automappingRulesFile": "",
+    "commands": [
+    ],
+    "compatibilityVersion": 1100,
+    "extensionsPath": "extensions",
+    "folders": [
+        "."
+    ],
+    "properties": [
+    ],
+    "propertyTypes": [
+        {
+            "id": 45,
+            "name": "_categoryBits",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "0x0001",
+                "0x0002",
+                "0x0004",
+                "0x0008",
+                "0x0010",
+                "0x0020",
+                "0x0040",
+                "0x0080",
+                "0x0100",
+                "0x0200",
+                "0x0400",
+                "0x0800",
+                "0x1000",
+                "0x4000",
+                "0x8000"
+            ],
+            "valuesAsFlags": false
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 77,
+            "members": [
+                {
+                    "name": "ActionTypes",
+                    "propertyType": "ActionTypes",
+                    "type": "string",
+                    "value": "Select Type"
+                },
+                {
+                    "name": "Angle",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Times",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "X",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Action",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 90,
+            "members": [
+                {
+                    "name": "Action1",
+                    "propertyType": "Action",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Action2",
+                    "propertyType": "Action",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "ActionTwo",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "id": 78,
+            "name": "ActionTypes",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "Select Type",
+                "DelayTime",
+                "Blink",
+                "MoveBy",
+                "MoveTo",
+                "ScaleBy",
+                "ScaleTo",
+                "RotateTo",
+                "RotateBy",
+                "Repeat",
+                "Repeat Forever",
+                "Remove Self",
+                "FadeIn",
+                "FadeOut"
+            ],
+            "valuesAsFlags": false
+        },
+        {
+            "color": "#ffaa0000",
+            "drawFill": true,
+            "id": 30,
+            "members": [
+                {
+                    "name": "CONVEYOR BELT",
+                    "propertyType": "CONVEYOR BELT",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "DESTYROY",
+                    "propertyType": "ContatcsClass",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "SET GRAVITY SCALE",
+                    "propertyType": "SET GRAVITY SCALE",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "SET STATIC",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "TELEPORT",
+                    "propertyType": "TELEPORT",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "TRIGGER",
+                    "propertyType": "TRIGGER",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "BeginContact",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 31,
+            "members": [
+                {
+                    "name": "Allow Sleep",
+                    "type": "bool",
+                    "value": true
+                },
+                {
+                    "name": "Angular Damping",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Angular Velocity",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Awake",
+                    "type": "bool",
+                    "value": true
+                },
+                {
+                    "name": "Bullet",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "FixedRotation",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "Gravity Scale",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Linear Damping",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Linear Velocity",
+                    "propertyType": "Linear Velocity",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Offset Mass",
+                    "propertyType": "Offset Mass",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Set Pivot",
+                    "propertyType": "Set Pivot",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "Body Settings",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 49,
+            "members": [
+                {
+                    "name": "DESTROY ALL",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "DESTROY ALL ONCE",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "DESTROY PHYSICS",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "DESTROY SPRITE",
+                    "type": "bool",
+                    "value": false
+                }
+            ],
+            "name": "ContatcsClass",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 61,
+            "members": [
+                {
+                    "name": "Force",
+                    "propertyType": "Force",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "CONVEYOR BELT",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 79,
+            "members": [
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "DelayTime",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffffaaff",
+            "drawFill": true,
+            "id": 32,
+            "members": [
+                {
+                    "name": "Body",
+                    "propertyType": "Body Settings",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Filter",
+                    "propertyType": "SetFilter",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Material",
+                    "propertyType": "Material",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Processing",
+                    "propertyType": "Processing",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "Dynamic",
+            "type": "class",
+            "useAs": [
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 48,
+            "members": [
+                {
+                    "name": "DESTYROY",
+                    "propertyType": "ContatcsClass",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "SET GRAVITY SCALE",
+                    "propertyType": "SET GRAVITY SCALE",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "SET STATIC",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "TELEPORT",
+                    "propertyType": "TELEPORT",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "EndContact",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 62,
+            "members": [
+                {
+                    "name": "X",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Force",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "id": 46,
+            "name": "groupIndex",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "6",
+                "5",
+                "4",
+                "3",
+                "2",
+                "1",
+                "0",
+                "-1",
+                "-2",
+                "-3",
+                "-4",
+                "-5",
+                "-6"
+            ],
+            "valuesAsFlags": false
+        },
+        {
+            "color": "#ff5500ff",
+            "drawFill": true,
+            "id": 33,
+            "members": [
+                {
+                    "name": "Body",
+                    "propertyType": "Body Settings",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Filter",
+                    "propertyType": "SetFilter",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Material",
+                    "propertyType": "Material",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Processing",
+                    "propertyType": "Processing",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "Kinematic",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 34,
+            "members": [
+                {
+                    "name": "x",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Linear Velocity",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 35,
+            "members": [
+                {
+                    "name": "Density",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "Friction",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "IsSensor",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "Restitution",
+                    "type": "float",
+                    "value": 0.5
+                }
+            ],
+            "name": "Material",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 80,
+            "members": [
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "X",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "MoveBy",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 81,
+            "members": [
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "X",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "MoveTo",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 36,
+            "members": [
+                {
+                    "name": "x",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Offset Mass",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 74,
+            "members": [
+                {
+                    "name": "Object1",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object2",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object3",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object4",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object5",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Start Delay",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Timer",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Visible Start",
+                    "type": "bool",
+                    "value": true
+                }
+            ],
+            "name": "ONOFF",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 68,
+            "members": [
+            ],
+            "name": "PostSolve",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 67,
+            "members": [
+                {
+                    "name": "DESTROY",
+                    "propertyType": "ContatcsClass",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "PreSolve",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 43,
+            "members": [
+                {
+                    "name": "BeginContact",
+                    "propertyType": "BeginContact",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "EndContact",
+                    "propertyType": "EndContact",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "PostSolve",
+                    "propertyType": "ContatcsClass",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "PreSolve",
+                    "propertyType": "PreSolve",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "Processing",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 82,
+            "members": [
+                {
+                    "name": "Times",
+                    "type": "int",
+                    "value": 0
+                }
+            ],
+            "name": "Repete",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 83,
+            "members": [
+                {
+                    "name": "Repete",
+                    "type": "bool",
+                    "value": false
+                }
+            ],
+            "name": "RepeteForever",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 58,
+            "members": [
+                {
+                    "name": "Someting",
+                    "type": "bool",
+                    "value": false
+                }
+            ],
+            "name": "Rope",
+            "type": "class",
+            "useAs": [
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 84,
+            "members": [
+                {
+                    "name": "Someting",
+                    "type": "bool",
+                    "value": false
+                }
+            ],
+            "name": "Rope",
+            "type": "class",
+            "useAs": [
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 85,
+            "members": [
+                {
+                    "name": "Angle",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "RotateBy",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 86,
+            "members": [
+                {
+                    "name": "Angle",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "RotateTo",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 87,
+            "members": [
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "X",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "ScaleBy",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 88,
+            "members": [
+                {
+                    "name": "Duration",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "X",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "ScaleTo",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 69,
+            "members": [
+                {
+                    "name": "Force",
+                    "propertyType": "Force",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "SET GRAVITY SCALE",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 38,
+            "members": [
+                {
+                    "name": "Set Center",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "x",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "y",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "Set Pivot",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 73,
+            "members": [
+                {
+                    "name": "ScaleX",
+                    "type": "float",
+                    "value": 64
+                },
+                {
+                    "name": "ScaleY",
+                    "type": "float",
+                    "value": 64
+                }
+            ],
+            "name": "Set Scale",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 39,
+            "members": [
+                {
+                    "name": "_categoryBits",
+                    "propertyType": "_categoryBits",
+                    "type": "string",
+                    "value": "0x0001"
+                },
+                {
+                    "name": "_maskBits",
+                    "type": "string",
+                    "value": "0xFFFF"
+                },
+                {
+                    "name": "groupIndex",
+                    "propertyType": "groupIndex",
+                    "type": "string",
+                    "value": "0"
+                }
+            ],
+            "name": "SetFilter",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 72,
+            "members": [
+                {
+                    "name": "Force",
+                    "propertyType": "Force",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Rotation",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Set Scale",
+                    "propertyType": "Set Scale",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Spawn Amount",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "Spawn Time",
+                    "type": "float",
+                    "value": 1
+                },
+                {
+                    "name": "Start Delay",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "Tile ID",
+                    "type": "int",
+                    "value": 0
+                }
+            ],
+            "name": "Spawn",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 40,
+            "members": [
+                {
+                    "name": "Body",
+                    "propertyType": "Body Settings",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Filter",
+                    "propertyType": "SetFilter",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Material",
+                    "propertyType": "Material",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "Processing",
+                    "propertyType": "Processing",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "Static",
+            "type": "class",
+            "useAs": [
+                "object",
+                "tile"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 89,
+            "members": [
+            ],
+            "name": "System Image",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 70,
+            "members": [
+                {
+                    "name": "Force",
+                    "propertyType": "Force",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "ID",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Rotation",
+                    "type": "float",
+                    "value": 0
+                }
+            ],
+            "name": "TELEPORT",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 71,
+            "members": [
+                {
+                    "name": "ONOFF",
+                    "propertyType": "ONOFF",
+                    "type": "class",
+                    "value": {
+                    }
+                },
+                {
+                    "name": "SPAWN OBJECTS",
+                    "propertyType": "Spawn",
+                    "type": "class",
+                    "value": {
+                    }
+                }
+            ],
+            "name": "Timer",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 75,
+            "members": [
+                {
+                    "name": "Object1",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object2",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object3",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object4",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "Object5",
+                    "type": "object",
+                    "value": 0
+                },
+                {
+                    "name": "TYPE",
+                    "propertyType": "Type",
+                    "type": "string",
+                    "value": "NOTHING"
+                }
+            ],
+            "name": "TRIGGER",
+            "type": "class",
+            "useAs": [
+                "property"
+            ]
+        },
+        {
+            "id": 76,
+            "name": "Type",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "NOTHING",
+                "DESTROY OTHER",
+                "DESTROY ALL",
+                "SWITCH SELF",
+                "SWITCH OTHER"
+            ],
+            "valuesAsFlags": false
+        }
+    ]
+}

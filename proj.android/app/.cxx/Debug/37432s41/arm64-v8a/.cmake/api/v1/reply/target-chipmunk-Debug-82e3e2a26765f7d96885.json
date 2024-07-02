@@ -1,0 +1,369 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/libchipmunk.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=gnu99 -fblocks -fno-limit-debug-info  -Wall -fPIC"
+				},
+				{
+					"fragment" : "-std=gnu11"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 0,
+					"define" : "CP_USE_CGTYPES=0"
+				},
+				{
+					"backtrace" : 0,
+					"define" : "CP_USE_DOUBLES=0"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/include"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31
+			],
+			"sysroot" : 
+			{
+				"path" : "C:/Users/Admin/AppData/Local/Android/Sdk/ndk/23.2.8568313/toolchains/llvm/prebuilt/windows-x86_64/sysroot"
+			}
+		}
+	],
+	"folder" : 
+	{
+		"name" : "3rdparty"
+	},
+	"id" : "chipmunk::@e030cd6fde125c56595a",
+	"name" : "chipmunk",
+	"nameOnDisk" : "libchipmunk.a",
+	"paths" : 
+	{
+		"build" : "engine/3rdparty/chipmunk/src",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/chipmunk.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpArbiter.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpArray.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpBBTree.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpBody.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpCollision.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpConstraint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpDampedRotarySpring.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpDampedSpring.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpGearJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpGrooveJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpHashSet.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpHastySpace.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpMarch.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpPinJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpPivotJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpPolyShape.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpPolyline.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpRatchetJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpRobust.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpRotaryLimitJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpShape.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSimpleMotor.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSlideJoint.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpace.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpaceComponent.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpaceDebug.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpaceHash.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpaceQuery.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpaceStep.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSpatialIndex.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/chipmunk/src/cpSweep1D.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

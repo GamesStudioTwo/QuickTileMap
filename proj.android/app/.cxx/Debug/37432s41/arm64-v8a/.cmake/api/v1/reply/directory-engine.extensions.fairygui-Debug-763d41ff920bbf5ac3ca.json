@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "engine/extensions/fairygui",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/extensions/fairygui"
+	}
+}

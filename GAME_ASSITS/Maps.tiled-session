@@ -1,0 +1,175 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/Admin/Documents/NewXml/Content/Maps/Map03.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "C:/Users/Admin/Desktop/MazeOfDeath/Content/Maps/Map03.tmx": {
+            "scale": 0.5843489583333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 948.0636391996079,
+                "y": 636.6059093542494
+            }
+        },
+        "C:/Users/Admin/Desktop/MazeOfDeath/Content/Maps/Map03.tmx#TileMap": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Admin/Documents/CameraTest/Content/Map04.tmx": {
+            "scale": 0.5008705357142856,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1120.0499130977319,
+                "y": 609.9380542804938
+            }
+        },
+        "C:/Users/Admin/Documents/CameraTest/Content/Map04.tmx#TileMap": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Admin/Documents/CameraTest/Content/TestMap.tmx": {
+            "scale": 0.5008705357142856,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1100.0846740050804,
+                "y": 587.9762912785776
+            }
+        },
+        "C:/Users/Admin/Documents/CameraTest/Content/TestMap.tmx#TileMap": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map01.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 591.875,
+                "y": 931.625
+            }
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map01.tmx#TileMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map02.tmx": {
+            "expandedObjectLayers": [
+                19,
+                21,
+                18,
+                15,
+                24
+            ],
+            "scale": 3,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 297.3333333333333,
+                "y": 250.33333333333331
+            }
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map02.tmx#TileMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map03.tmx": {
+            "expandedObjectLayers": [
+                23
+            ],
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1145.4545454545455,
+                "y": 184.848484848485
+            }
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map03.tmx#TileMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map04.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 954.5454545454545,
+                "y": 901.5151515151513
+            }
+        },
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map04.tmx#TileMap": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Admin/Documents/NewXml/Content/Maps/Map03.tmx": {
+            "scale": 0.5843489583333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 960.0427826551986,
+                "y": 359.3743036677214
+            }
+        },
+        "C:/Users/Admin/Documents/NewXml/Content/Maps/Map03.tmx#TileMap": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Admin/Documents/Txml/Resources/Maps/Map01.tmx": {
+            "scale": 1.3,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 511.9230769230768,
+                "y": 384.23076923076917
+            }
+        },
+        "C:/Users/Admin/Documents/Txml/Resources/Maps/Map01.tmx#SpriteSheet01": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/Admin/Documents/Txml/Resources/Maps/Map02.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1336,
+                "y": -168
+            }
+        },
+        "C:/Users/Admin/Documents/Txml/Resources/Maps/Map02.tmx#SpriteSheet01": {
+            "scaleInDock": 1
+        }
+    },
+    "frame.defaultDuration": 151,
+    "last.imagePath": "C:/Users/Admin/Documents/MazeOfDeath/GAME_ASSITS",
+    "last.objectTypesPath": "C:/Users/Admin/Documents/NewXml/Content/Maps/propertytypes.json",
+    "map.height": 128,
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "map.width": 128,
+    "openFiles": [
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map03.tmx",
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map02.tmx",
+        "C:/Users/Admin/Documents/NewXml/Content/Maps/Map03.tmx"
+    ],
+    "project": "Maps.tiled-project",
+    "property.type": "Action",
+    "recentFiles": [
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map03.tmx",
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map02.tmx",
+        "C:/Users/Admin/Documents/NewXml/Content/Maps/Map03.tmx",
+        "C:/Users/Admin/Desktop/MazeOfDeath/Content/Maps/Map03.tmx",
+        "C:/Users/Admin/Documents/CameraTest/Content/TestMap.tmx",
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map04.tmx",
+        "C:/Users/Admin/Documents/CameraTest/Content/Map04.tmx",
+        "C:/Users/Admin/Documents/Txml/Resources/Maps/Map02.tmx",
+        "C:/Users/Admin/Documents/MazeOfDeath/Content/Maps/Map01.tmx",
+        "C:/Users/Admin/Documents/Txml/Resources/Maps/Map01.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

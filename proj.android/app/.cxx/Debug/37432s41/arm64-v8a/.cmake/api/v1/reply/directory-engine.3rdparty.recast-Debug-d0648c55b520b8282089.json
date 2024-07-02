@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "engine/3rdparty/recast",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/recast"
+	}
+}

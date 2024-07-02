@@ -1,0 +1,496 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/libyasio.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 24,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 37,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 36,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fno-char8_t -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -fno-limit-debug-info  -fPIC"
+				},
+				{
+					"fragment" : "-std=c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "YASIO_SSL_BACKEND=1"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/openssl/_x/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				58,
+				59
+			],
+			"sysroot" : 
+			{
+				"path" : "C:/Users/Admin/AppData/Local/Android/Sdk/ndk/23.2.8568313/toolchains/llvm/prebuilt/windows-x86_64/sysroot"
+			}
+		}
+	],
+	"folder" : 
+	{
+		"name" : "3rdparty"
+	},
+	"id" : "yasio::@a7174f46b4b9a2b4a7bf",
+	"name" : "yasio",
+	"nameOnDisk" : "libyasio.a",
+	"paths" : 
+	{
+		"build" : "engine/3rdparty/yasio",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				58,
+				59
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/bindings/lua/lua.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/bindings/luajit/lua.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/bindings/lyasio.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/bindings/yasio_axlua.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/bindings/yasio_sol.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/buffer_alloc.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/byte_buffer.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/compiler/feature_test.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/config.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/endian_portable.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/errc.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/fsutils.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/ibstream.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/ares.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/char_traits.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/concurrent_queue.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/epoll_io_watcher.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/eventfd_select_interrupter.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/evport_io_watcher.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/fp16.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/ifaddrs.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/inet_ntop.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/kqueue_io_watcher.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/mbedtls.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/object_pool.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/openssl.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/pipe_select_interrupter.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/poll_io_watcher.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/select_interrupter.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/select_io_watcher.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/socket.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/impl/socket_select_interrupter.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/io_service.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/io_watcher.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/logging.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/memory.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/object_pool.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/object_pool_alloc.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/obstream.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/platform/yasio_jni.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/platform/yasio_unreal.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/pod_vector.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/ref_ptr.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/shared_mutex.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/singleton.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/split.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/ssl.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/strfmt.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/string.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/string_view.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/sz.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/thread_name.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/type_traits.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/utils.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/wtimer_hres.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/xxsocket.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/yasio.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/yasio_fwd.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/io_service.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/yasio/yasio/xxsocket.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

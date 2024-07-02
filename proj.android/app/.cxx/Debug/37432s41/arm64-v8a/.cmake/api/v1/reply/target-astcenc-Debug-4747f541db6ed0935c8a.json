@@ -1,0 +1,308 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/libastcenc.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 37,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 58,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 120,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-fno-char8_t -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -frtti -fexceptions -fsigned-char -fno-limit-debug-info  -fPIC"
+				},
+				{
+					"fragment" : "-std=c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "ASTCENC_AVX=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "ASTCENC_F16C=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "ASTCENC_NEON=1"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "ASTCENC_POPCNT=0"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "ASTCENC_SSE=0"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/.."
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21
+			],
+			"sysroot" : 
+			{
+				"path" : "C:/Users/Admin/AppData/Local/Android/Sdk/ndk/23.2.8568313/toolchains/llvm/prebuilt/windows-x86_64/sysroot"
+			}
+		}
+	],
+	"folder" : 
+	{
+		"name" : "3rdparty"
+	},
+	"id" : "astcenc::@730cd7a4979c4081e0bb",
+	"name" : "astcenc",
+	"nameOnDisk" : "libastcenc.a",
+	"paths" : 
+	{
+		"build" : "engine/3rdparty/astcenc",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_averages_and_directions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_block_sizes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_color_quantize.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_color_unquantize.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_compress_symbolic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_compute_variance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_decompress_symbolic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_diagnostic_trace.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_entry.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_find_best_partitioning.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_ideal_endpoints_and_weights.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_image.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_integer_sequence.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_mathlib.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_mathlib_softfloat.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_partition_tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_percentile_tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_pick_best_endpoint_format.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_quantization.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_symbolic_physical.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_weight_align.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/astcenc/astcenc_weight_quant_xfer_tables.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

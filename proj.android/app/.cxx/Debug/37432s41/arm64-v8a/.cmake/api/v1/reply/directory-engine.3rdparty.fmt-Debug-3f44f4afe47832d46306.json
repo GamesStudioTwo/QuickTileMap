@@ -1,0 +1,128 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 392,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 404,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 407,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 410,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"lib/libfmtd.a"
+			],
+			"targetId" : "fmt::@172b82096f85eddb0020",
+			"targetIndex" : 25,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/fmt",
+			"paths" : 
+			[
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/args.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/chrono.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/color.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/compile.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/core.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/format.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/format-inl.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/os.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/ostream.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/printf.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/ranges.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/std.h",
+				"C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt/include/fmt/xchar.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/fmt",
+			"paths" : 
+			[
+				"proj.android/app/.cxx/Debug/37432s41/arm64-v8a/engine/3rdparty/fmt/fmt-config.cmake",
+				"proj.android/app/.cxx/Debug/37432s41/arm64-v8a/engine/3rdparty/fmt/fmt-config-version.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/fmt",
+			"exportName" : "fmt-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "fmt::@172b82096f85eddb0020",
+					"index" : 25
+				},
+				{
+					"id" : "fmt-header-only::@172b82096f85eddb0020",
+					"index" : 0
+				}
+			],
+			"paths" : 
+			[
+				"engine/3rdparty/fmt/CMakeFiles/Export/lib/cmake/fmt/fmt-targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"proj.android/app/.cxx/Debug/37432s41/arm64-v8a/engine/3rdparty/fmt/fmt.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "engine/3rdparty/fmt",
+		"source" : "C:/Users/Admin/Documents/Cocos/axmol-dev/3rdparty/fmt"
+	}
+}
