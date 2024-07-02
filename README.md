@@ -11,9 +11,5 @@
 
 		Videos to help with using QuickTileMap.
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 37a253eca60b56fa8e7f41a021fb46300387c6ee
-[<img src="https://img.youtube.com/vi/KpUR1sl3H1U/hqdefault.jpg" width="320" height="200"
-/>](https://www.youtube.com/embed/KpUR1sl3H1U)		 
+[<img src="https://img.youtube.com/vi/KpUR1sl3H1U/hqdefault.jpg" width="320" height="200"/>](https://www.youtube.com/embed/KpUR1sl3H1U)		 
