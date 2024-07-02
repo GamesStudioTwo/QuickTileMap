@@ -11,8 +11,6 @@
 
 		Videos to help with using QuickTileMap.
 
-		YouTube QuickTilemap Part1:
-		 URL [https://www.youtube.com/watch?v=KpUR1sl3H1U]
 
-
-
+[<img src="https://img.youtube.com/vi/KpUR1sl3H1U/hqdefault.jpg" width="320" height="200"
+/>](https://www.youtube.com/embed/KpUR1sl3H1U)		 
