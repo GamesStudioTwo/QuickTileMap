@@ -11,7 +11,8 @@
 
 		Videos to help with using QuickTileMap.
 
-		"# YouTube Part1: https://www.youtube.com/watch?v=KpUR1sl3H1U"
+		YouTube QuickTilemap Part1:
+		 URL [https://www.youtube.com/watch?v=KpUR1sl3H1U]
 
 
 
