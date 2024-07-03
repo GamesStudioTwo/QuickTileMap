@@ -1,2 +1,102 @@
 [
+    {
+        "color": "#ffa0a0a4",
+        "drawFill": true,
+        "id": 5,
+        "members": [
+            {
+                "name": "ActionType",
+                "propertyType": "ActionTypes",
+                "type": "string",
+                "value": "Select Type"
+            },
+            {
+                "name": "Angle",
+                "type": "float",
+                "value": 0
+            },
+            {
+                "name": "Duration",
+                "type": "float",
+                "value": 0
+            },
+            {
+                "name": "Times",
+                "type": "int",
+                "value": 0
+            },
+            {
+                "name": "X",
+                "type": "float",
+                "value": 0
+            },
+            {
+                "name": "Y",
+                "type": "float",
+                "value": 0
+            }
+        ],
+        "name": "Action",
+        "type": "class",
+        "useAs": [
+            "property"
+        ]
+    },
+    {
+        "color": "#ffa0a0a4",
+        "drawFill": true,
+        "id": 45,
+        "members": [
+            {
+                "name": "Action1",
+                "propertyType": "Action",
+                "type": "class",
+                "value": {
+                }
+            },
+            {
+                "name": "Action2",
+                "propertyType": "Action",
+                "type": "class",
+                "value": {
+                }
+            }
+        ],
+        "name": "ActionTwo",
+        "type": "class",
+        "useAs": [
+            "property",
+            "map",
+            "layer",
+            "object",
+            "tile",
+            "tileset",
+            "wangcolor",
+            "wangset",
+            "project"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "ActionTypes",
+        "storageType": "string",
+        "type": "enum",
+        "values": [
+            "Select Type",
+            "DelayTime",
+            "Blink",
+            "MoveBy",
+            "MoveTo",
+            "ScaleBy",
+            "ScaleTo",
+            "RotateTo",
+            "RotateBy",
+            "Repeat",
+            "Repeat Forever",
+            "Remove Self",
+            "FadeIn",
+            "FadeOut"
+        ],
+        "valuesAsFlags": false
+    }
 ]

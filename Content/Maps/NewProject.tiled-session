@@ -16,8 +16,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 725.3333333333334,
-                "y": 1034.6666666666667
+                "x": 722.6666666666665,
+                "y": 1030.6666666666667
             }
         },
         "Map01.tmx#TileMap": {
@@ -56,7 +56,7 @@
         "Map01.tmx"
     ],
     "project": "NewProject.tiled-project",
-    "property.type": "object",
+    "property.type": "ActionTwo",
     "recentFiles": [
         "Map01.tmx",
         "Map03.tmx",
