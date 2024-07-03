@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="17" nextobjectid="17">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="17" nextobjectid="18">
  <tileset firstgid="1" name="TileMap" tilewidth="64" tileheight="64" tilecount="1024" columns="32">
   <image source="../../GAME_ASSITS/TileMap.png" width="2048" height="2048"/>
   <tile id="98">
@@ -17,6 +17,10 @@
  <objectgroup id="16" name="Object Layer 1">
   <object id="16" x="477.333" y="859.01" width="334.5" height="138.931">
    <text fontfamily="Segoe UI" pixelsize="96" wrap="1">AXMOL</text>
+  </object>
+  <object id="17" x="512.333" y="1028" width="144.5" height="59.5">
+   <text wrap="1">SmartNode 
+TileMap</text>
   </object>
  </objectgroup>
 </map>
