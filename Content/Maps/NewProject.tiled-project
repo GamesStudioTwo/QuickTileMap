@@ -17,7 +17,7 @@
             "members": [
                 {
                     "name": "ActionType",
-                    "propertyType": "ActionTypes",
+                    "propertyType": "ActionType",
                     "type": "string",
                     "value": "Select Type"
                 },
@@ -54,6 +54,29 @@
             ]
         },
         {
+            "id": 6,
+            "name": "ActionType",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "Select Type",
+                "DelayTime",
+                "Blink",
+                "MoveBy",
+                "MoveTo",
+                "ScaleBy",
+                "ScaleTo",
+                "RotateTo",
+                "RotateBy",
+                "Repeat",
+                "Repeat Forever",
+                "Remove Self",
+                "FadeIn",
+                "FadeOut"
+            ],
+            "valuesAsFlags": false
+        },
+        {
             "color": "#ffa0a0a4",
             "drawFill": true,
             "id": 45,
@@ -86,29 +109,6 @@
                 "wangset",
                 "project"
             ]
-        },
-        {
-            "id": 6,
-            "name": "ActionTypes",
-            "storageType": "string",
-            "type": "enum",
-            "values": [
-                "Select Type",
-                "DelayTime",
-                "Blink",
-                "MoveBy",
-                "MoveTo",
-                "ScaleBy",
-                "ScaleTo",
-                "RotateTo",
-                "RotateBy",
-                "Repeat",
-                "Repeat Forever",
-                "Remove Self",
-                "FadeIn",
-                "FadeOut"
-            ],
-            "valuesAsFlags": false
         }
     ]
 }

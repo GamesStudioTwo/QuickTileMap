@@ -56,7 +56,7 @@
         "Map01.tmx"
     ],
     "project": "NewProject.tiled-project",
-    "property.type": "ActionTwo",
+    "property.type": "Action",
     "recentFiles": [
         "Map01.tmx",
         "Map03.tmx",

@@ -6,7 +6,7 @@
         "members": [
             {
                 "name": "ActionType",
-                "propertyType": "ActionTypes",
+                "propertyType": "ActionType",
                 "type": "string",
                 "value": "Select Type"
             },
@@ -78,7 +78,7 @@
     },
     {
         "id": 6,
-        "name": "ActionTypes",
+        "name": "ActionType",
         "storageType": "string",
         "type": "enum",
         "values": [

@@ -1256,6 +1256,11 @@ void QuickTileMap::BuildTileMap(void) {
                  //Start GID Sprite Animation and all that good stuff
                  if ( smartNode->keyExist("gid") ) {
                      Sprite *sprite = GetAnimation(smartNode);
+
+                     //Actions Properties Generator
+                     CreateActions(smartNode , sprite);
+
+
                      auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
                      sprite->setAnchorPoint(Vec2(0.0,0.0));
                      sprite->setScale(size.x / tileWidth, size.y / tileHeight);
@@ -1264,9 +1269,9 @@ void QuickTileMap::BuildTileMap(void) {
                      sprite->setOpacity(opacity);
                      sprite->setRotation(smartNode->getKeyAsFloat("rotation"));
 
-                     /************** DEMO Getting Properties ****************************/
-
+                     /************** DEMO for Getting Properties ****************************/
                      // Loop
+                     /**
                      auto property = GetPropertiesAsVector(smartNode);
 
                      for (auto key: property ) {
@@ -1284,9 +1289,10 @@ void QuickTileMap::BuildTileMap(void) {
                              AXLOG("Prototype %s", key->getKeyAsChar("prototype"));
 
                          //key->ShowAllStorage();
-                     }
+                     } **/
 
                      //Manual Get
+                     /**
                      auto properties = smartNode->getChildByName("properties");
                      if (properties) {
                          auto key = properties->getChildByName("property");
@@ -1303,7 +1309,7 @@ void QuickTileMap::BuildTileMap(void) {
                          if (key->keyExist("prototype"))
                              AXLOG("Manual Prototype %s", key->getKeyAsChar("prototype"));
                          //key->ShowAllStorage();
-                     }
+                     }**/
 
 
                      // Start of checking if you sprite had Physics attached to it
@@ -1414,7 +1420,145 @@ void QuickTileMap::BuildTileMap(void) {
 
      }   // End for tileMapNodes
 
-     //SmartNode::ShowTree(root);
+    // SmartNode::ShowTree(root);
 
 
+ }
+
+
+
+
+void QuickTileMap::CreateActions( SmartNode* properties , Sprite* sprite )
+ {
+    auto test = properties->getChildByName("properties");
+
+    if ( !test ) {
+       return;
+    }
+
+     bool  repeatForever = false;
+     bool  repeat        = false;
+     int   repeatAmount  = 0;
+     ax::Vector<ax::FiniteTimeAction*>sequenceBuffer;
+          for ( auto child : test->getChildren() ) {
+
+                auto prototype = child->getKeyAsString("propertytype");
+
+                 if ( prototype ==  "Action" || prototype == "ActionTwo" ) {
+
+                     auto property = child->getAllChildrenByName("property", true);
+                        std::map<std::string,std::string>data;
+                        for ( auto p : property ) {
+                          if( p->getKeyAsString("name") == "ActionType") {
+                              data[p->getKeyAsString("value")] = p->getKeyAsString("name");
+                              } else {
+                              data[p->getKeyAsString("name")] = p->getKeyAsString("value");
+                            }
+                        }
+
+                     if ( data["DelayTime"].size() > 0  ) {
+                         float duration = std::atof( data["Duration"].c_str() );
+                         DelayTime *delay = DelayTime::create(duration );
+                         sequenceBuffer.pushBack(delay);
+                     }
+
+                     if ( data["Blink"].size() > 0  ) {
+                         float duration = std::atof( data["Duration"].c_str() );
+                         int times = std::atoi( data["Times"].c_str() );
+                         Blink *blink = Blink::create(duration, times);
+                         sequenceBuffer.pushBack(blink);
+                     }
+
+                     if ( data["MoveBy"].size() > 0  ) {
+                         float x = std::atof( data["X"].c_str() );
+                         float y = std::atof( data["Y"].c_str() );
+                         float duration = std::atof( data["Duration"].c_str() );
+                         MoveBy *moveBy = MoveBy::create( duration,Vec2( x, y) );
+                         sequenceBuffer.pushBack(moveBy);
+                     }
+
+                     if ( data["MoveTo"].size() > 0  ) {
+                         float x = std::atof( data["X"].c_str() );
+                         float y = std::atof( data["Y"].c_str() );
+                         float duration = std::atof( data["Duration"].c_str() );
+                         MoveBy *moveTo = MoveTo::create( duration,Vec2( x, y) );
+                         sequenceBuffer.pushBack(moveTo);
+                     }
+
+                     if ( data["ScaleBy"].size() > 0  ) {
+                         float x = std::atof( data["X"].c_str() );
+                         float y = std::atof( data["Y"].c_str() );
+                         float duration = std::atof( data["Duration"].c_str() );
+                         ScaleBy *scaleBy = ScaleBy::create( duration,1 * x, 1 * y );
+                         sequenceBuffer.pushBack(scaleBy);
+                     }
+
+                     if ( data["ScaleTo"].size() > 0  ) {
+                         float x = std::atof( data["X"].c_str() );
+                         float y = std::atof( data["Y"].c_str() );
+                         float duration = std::atof( data["Duration"].c_str() );
+                         ScaleTo *scaleTo = ScaleTo::create( duration,x / sprite->getContentSize().width , y / sprite->getContentSize().height );
+                         sequenceBuffer.pushBack(scaleTo);
+                     }
+
+                     if ( data["RotateTo"].size() > 0  ) {
+                         float x = std::atof( data["X"].c_str() );
+                         float y = std::atof( data["Y"].c_str() );
+                         float duration = std::atof( data["Duration"].c_str() );
+                         float angle = std::atof( data["Angle"].c_str() );
+                         RotateTo *rotateTo = RotateTo::create( duration, angle );
+                         if( x != 0 || y !=0 )
+                             sprite->setAnchorPoint(Vec2( x, y));
+                         else
+                             sprite->setAnchorPoint(Vec2( 0.5,0.5));
+                         sequenceBuffer.pushBack(rotateTo );
+                     }
+
+                     if ( data["RotateBy"].size() > 0  ) {
+                         float x = std::atof( data["X"].c_str() );
+                         float y = std::atof( data["Y"].c_str() );
+                         float duration = std::atof( data["Duration"].c_str() );
+                         float angle = std::atof( data["Angle"].c_str() );
+                         RotateBy *rotateBy = RotateBy::create( duration, angle );
+                         if( x != 0 || y !=0 )
+                             sprite->setAnchorPoint(Vec2( x, y));
+                         else
+                             sprite->setAnchorPoint(Vec2( 0.5,0.5));
+                         sequenceBuffer.pushBack(rotateBy );
+                     }
+
+                     if ( data["FadeOut"].size() > 0  ) {
+                         float duration = std::atof( data["Duration"].c_str() );
+                         FadeOut *fadeOut = FadeOut::create( duration );
+                         sequenceBuffer.pushBack(fadeOut);
+                     }
+
+                     if ( data["FadeIn"].size() > 0  ) {
+                         float duration = std::atof( data["Duration"].c_str() );
+                         FadeIn *fadeIn = FadeIn::create( duration );
+                         sequenceBuffer.pushBack(fadeIn);
+                     }
+
+                     if ( data["Repeat"].size() > 0  ) {
+                         repeat = true;
+                         repeatAmount =  std::atoi( data["Times"].c_str() );
+                     }
+
+                     if ( data["Repeat Forever"].size() > 0  ) {
+                         repeatForever = true;
+                     }
+                 } // End for ( auto child : test->getChildren() ){}
+            }
+
+     if ( sequenceBuffer.empty() ) return;
+
+     Sequence* seq = Sequence::create( sequenceBuffer);
+     if( repeatForever ||  repeat ) {
+         if( repeatForever )
+             sprite->runAction(RepeatForever::create(seq));
+         else
+             sprite->runAction(Repeat::create(seq, repeatAmount ) );
+     } else {
+         sprite->runAction(seq);
+     }
  }

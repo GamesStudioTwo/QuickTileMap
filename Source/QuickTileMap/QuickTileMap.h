@@ -90,6 +90,8 @@ public:
     Color4B  GetObjectColour( SmartNode* node );
     void     AddExtraDataToNodes( void );
 
+    //Actions properties
+    void CreateActions(SmartNode* properties , Sprite* sprite);
 
     Size visibleSize;
     Vec2 origin;

@@ -22,6 +22,35 @@
    <text wrap="1">SmartNode 
 TileMap</text>
   </object>
-  <object id="18" gid="33" x="384" y="832" width="64" height="64"/>
+  <object id="18" gid="33" x="384" y="832" width="64" height="64">
+   <properties>
+    <property name="Action001" type="class" propertytype="Action">
+     <properties>
+      <property name="ActionType" propertytype="ActionType" value="Repeat Forever"/>
+      <property name="Duration" type="float" value="5"/>
+      <property name="X" type="float" value="300"/>
+     </properties>
+    </property>
+    <property name="Action002" type="class" propertytype="Action">
+     <properties>
+      <property name="ActionType" propertytype="ActionType" value="DelayTime"/>
+      <property name="Duration" type="float" value="2"/>
+     </properties>
+    </property>
+    <property name="Action004" type="class" propertytype="Action">
+     <properties>
+      <property name="ActionType" propertytype="ActionType" value="FadeOut"/>
+      <property name="Duration" type="float" value="3"/>
+      <property name="X" type="float" value="-300"/>
+     </properties>
+    </property>
+    <property name="Action005" type="class" propertytype="Action">
+     <properties>
+      <property name="ActionType" propertytype="ActionType" value="FadeIn"/>
+      <property name="Duration" type="float" value="3"/>
+     </properties>
+    </property>
+   </properties>
+  </object>
  </objectgroup>
 </map>
