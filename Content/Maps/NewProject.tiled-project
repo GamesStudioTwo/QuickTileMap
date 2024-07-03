@@ -10,5 +10,19 @@
     "properties": [
     ],
     "propertyTypes": [
+        {
+            "id": 3,
+            "name": "Enum0",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "Enum0_1",
+                "Enum0_2",
+                "Enum0_3",
+                "Enum0_4",
+                "Enum0_5"
+            ],
+            "valuesAsFlags": false
+        }
     ]
 }

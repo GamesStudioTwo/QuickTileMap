@@ -24,7 +24,7 @@
 //#define USE_EXTENSION  ".jpg"
 
 //Uncomment to Put Everything in one layer or node using Z Order and No Node's
-#define USE_Z_ORDER
+//#define USE_Z_ORDER
 
 #define ID_TILE_MAP_NODE  100000000
 #include "SmartNode.h"

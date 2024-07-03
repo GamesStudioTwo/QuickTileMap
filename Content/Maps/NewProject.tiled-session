@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Map03.tmx",
+    "activeFile": "Map01.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -13,14 +13,11 @@
             "scaleInEditor": 1
         },
         "Map01.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
             "scale": 0.75,
-            "selectedLayer": -1,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 863.3333333333335,
-                "y": 329.33333333333326
+                "x": 728,
+                "y": 1038.6666666666667
             }
         },
         "Map01.tmx#TileMap": {
@@ -56,10 +53,10 @@
     "map.tileHeight": 64,
     "map.tileWidth": 64,
     "openFiles": [
-        "Map03.tmx"
+        "Map01.tmx"
     ],
     "project": "NewProject.tiled-project",
-    "property.type": "bool",
+    "property.type": "object",
     "recentFiles": [
         "Map01.tmx",
         "Map03.tmx",

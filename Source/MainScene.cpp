@@ -44,6 +44,7 @@ bool MainScene::init()
     auto safeArea = _director->getSafeAreaRect();
     auto safeOrigin = safeArea.origin;
 
+    setName("Axmol");
 
     /** Add you SpriteSheet Name Here **/
                                           //7704a465           0b715ae6            04b013b0            533bbf8e
@@ -54,26 +55,9 @@ bool MainScene::init()
     QTM->LoadMap("Maps/Map01.tmx");
     addChild(QTM);
 
-      auto tileset = QTM->root->getChildByName("tileset", true);
-      SmartNode::ShowDebugInfo(tileset );
-
-   //  auto group = root->getVectorOfChildrenByName({"objectgroup"},true);
-
-    // for(auto node : group){
-    // SmartNode::ShowDebugInfo(node);
-    //   auto s = node->getKeyAsString("name");
-    //   AXLOG("%s",s.c_str());
-    // }
-
-    //QTM->removeAllChildren();
-    //removeChild( QTM ,true);
-    //QTM->LoadMap("Maps/Map02.tmx");
-    //addChild(QTM);
-
-    setName("Root Axmol");
 
     //DebugNodes *debug = DebugNodes::create();
-   // debug->DebugNode(this);
+    //debug->DebugNode(this);
 
     return true;
 }

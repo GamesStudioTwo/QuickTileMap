@@ -713,7 +713,6 @@ void QuickTileMap::AddExtraDataToNodes( void ) {
  **************************************************************************************************/
 bool QuickTileMap::LoadMap( std::string fileName ) {
 
-
      //Extra Speed no need to reload data or decrypt Tile compression alredy done
      //if map is the same
 
@@ -826,8 +825,6 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
     } // end for loop
     xmlData.clear();       // Everything in in SmartNode Clear the stack
 
-
-
     //Adds extra data like no rectangle
     // shapeID, ShapeName. For easy Identification
     AddExtraDataToNodes();
@@ -837,6 +834,7 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
 
     //Now we build and Display the TileMap
       BuildTileMap();
+
     return true;
 }
 
@@ -1041,11 +1039,12 @@ std::vector<SmartNode*>QuickTileMap::GetAllPropertiesAsVector( SmartNode * node 
 void QuickTileMap::BuildTileMap(void) {
 
 
+
      //Creating Shortcut to map & tileset, you can create your owen as well.
-     tileSet = root->getChildByName("tileset", true);  // true = recuses find
+     tileSet = root->getChildByName("tileset", 1);  // true = recuses find
      map = root->getChildByName("map", true);          // true = recuses find
 
-     //Set Background colour
+    //Set Background colour
      auto colour = map->getKeyAsString("backgroundcolor");
      if (!colour.empty()) {
          auto colour4B = HTMLtoColour(colour);
@@ -1059,7 +1058,7 @@ void QuickTileMap::BuildTileMap(void) {
 #ifdef USE_Z_ORDER
      auto tileMapNodes = map->getVectorOfChildrenByName( { "objectgroup", "layer" } , false);  // false Not to reverse the order
 #else
-     auto tileMapNodes = map->getVectorOfChildrenByName({"objectgroup", "layer"},true);  // true to reverse the order
+     auto tileMapNodes = map->getVectorOfChildrenByName({"objectgroup", "layer","imagelayer"},true);  // true to reverse the order
 #endif
 
      //Start TileMap Building
@@ -1136,8 +1135,7 @@ void QuickTileMap::BuildTileMap(void) {
 
 
                          //Check for Animation
-                         auto tile = tileSet->getChildById(ID);
-
+                         auto tile = tileSet->getChildById(ID );
                          if (tile) {          // Check if Tile Exists in tileSet
                              auto animation = tile->getChildByName("animation");
                              if (animation) { // Check if there is animation
@@ -1204,10 +1202,6 @@ void QuickTileMap::BuildTileMap(void) {
              addChild(layer, node->getKeyAsInt("layer"));
             #endif
          }  //End Layer
-
-
-
-
 
 
          //Create tilemap objectgroup's
@@ -1335,18 +1329,15 @@ void QuickTileMap::BuildTileMap(void) {
 
                  else {
 
-
-
                      /**  Getting Text **/
                      SmartNode* object = smartNode->getChildByName(   "text");
                      if ( object ) { // if text
                          //This is the object part
                          float x      = smartNode->getKeyAsFloat("x");
                          float y      = smartNode->getKeyAsFloat("y");
-                         float width  = smartNode->getKeyAsFloat("width");
+                         float width  = smartNode->getKeyAsFloat("width")  ; //My font size
                          float height = smartNode->getKeyAsFloat("height");
-                         float id     = smartNode->getKeyAsFloat("id");
-                         // AXLOG("id:%d x:%f y:%f width:%f height%f ",x ,y ,width , height);
+                         float pixalSize = object->getKeyAsFloat("pixelsize");
 
                          //if you have added property's
                          auto property = GetPropertiesAsVector(smartNode);
@@ -1361,7 +1352,9 @@ void QuickTileMap::BuildTileMap(void) {
                          //AXLOG("yourString >> %s", yourString.c_str());
 
                          Label* bitmapText = CreateTextLabel(yourString);
-                         bitmapText->setAnchorPoint(Vec2(0,0));
+                         bitmapText->setContentSize(Vec2(width,height));
+                         bitmapText->setBMFontSize(pixalSize);
+                         bitmapText->setAnchorPoint(Vec2(0,1));
                          bitmapText->setPosition( x ,  -y  +  mapSize.height ); // Should make macro
                          bitmapText->setRotation(smartNode->getKeyAsFloat("rotation"));
                          if ( object->keyExist( "color") ) {
@@ -1375,8 +1368,9 @@ void QuickTileMap::BuildTileMap(void) {
                          objectgroup->addChild( bitmapText );
                         #endif
                          continue;
-                     }  // End Getting Text Objects
+                     }  // End Getting Text
 
+                     //Begin Physics Objects Only No sprite
                      object = smartNode->getChildByName(   "point/");
                      if ( object ) {
                          // smartNode Object only
@@ -1401,15 +1395,13 @@ void QuickTileMap::BuildTileMap(void) {
                      object = smartNode->getChildByName(   "polyline");
                      if ( object ) {
                          AXLOG("You Found polyline");
-                        // smartNode->ShowAllStorage();
-                       //  object->ShowAllStorage();
                          continue;
                      }
 
 
                      object = smartNode->getChildByName(   "rectangle/");
                      if ( object ) {
-                         AXLOG("You Found rectangle ");
+                        AXLOG("You Found rectangle ");
                       }
 
 
@@ -1421,4 +1413,8 @@ void QuickTileMap::BuildTileMap(void) {
 
 
      }   // End for tileMapNodes
+
+     //SmartNode::ShowTree(root);
+
+
  }
