@@ -8,6 +8,7 @@
 4. uses only 1 draw call for fast rendering utalising the sprite sheet.
 5. Save time on loading by not Reloading same data if map is the same and you just a reset the map.
 6. Now added Actions sequence you can build your owen actions on sprite's
+7. Auto Animation added thrue Tilemap
 
 
 		Videos to help with using QuickTileMap.
