@@ -80,6 +80,10 @@ public:
     int  setStorageData( const std::string& key , const std::string& value );
     std::string getFromStorage(const std::string& key) const;
     void removeFromStorage( const std::string& key );
+
+    SmartNode* getNodeWithData( const std::string tag , const std::string key );
+    SmartNode* getNextTag(  const std::string tag  );
+
     bool  findKeyFromStorage( const std::string& key );
     bool  deleteKeyFromStorage( const std::string& key );
     std::string getKeyAsString( const std::string& key );

@@ -843,6 +843,55 @@ bool SmartNode::findKeyFromStorage( const std::string& key )
 
 
 /*************************************************************************************************
+* getNodeWithData()                                                                              *
+* ************************************************************************************************
+* finds a node containing data match from storage                                                *
+* @return SmartNode                                                                              *
+**************************************************************************************************/
+SmartNode* SmartNode::getNodeWithData( const std::string tag , const std::string key ) {
+
+    if (storage[tag] == key ) {
+        return this;
+    }
+
+    // Recursively search children
+    for (SmartNode* child : children) {
+        SmartNode* result = child->getNodeWithData( tag, key );
+        if (result) {
+            return result;  // Return as soon as we find a match
+        }
+    }
+
+    return nullptr;  // No match found
+}
+
+
+/*************************************************************************************************
+* getNextTag()                                                                                   *
+* ************************************************************************************************
+* gets the next Matching tag                                                                     *
+* so a node->properties->getNextTag("name"); will bring you to the fist property , etc           *
+* @return SmartNode                                                                              *
+**************************************************************************************************/
+SmartNode* SmartNode::getNextTag( const std::string key ) {
+
+    if (storage.find(key) != storage.end() ) {
+        return this;
+    }
+
+    // Recursively search children
+    for (SmartNode* child : children) {
+        SmartNode* result = child->getNextTag(key);
+        if (result) {
+            return result;  // Return as soon as we find a match
+        }
+    }
+
+    return nullptr;  // No match found
+}
+
+
+/*************************************************************************************************
 * deleteKeyFromStorage()                                                                         *
 * ************************************************************************************************
 * Deletes a key in the storage                                                                   *
