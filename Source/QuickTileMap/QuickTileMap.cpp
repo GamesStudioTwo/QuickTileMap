@@ -1160,6 +1160,10 @@ FiniteTimeAction* QuickTileMap::GetAction( std::map<std::string,std::string> &ac
         return FadeIn::create( duration );
     }
 
+    if ( action["Remove Self"].size() > 0  ) {
+        return RemoveSelf::create( true );
+    }
+
     return nullptr;
 }
 

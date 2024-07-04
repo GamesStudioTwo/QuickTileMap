@@ -57,7 +57,7 @@
             "scaleInEditor": 1
         }
     },
-    "frame.defaultDuration": 120,
+    "frame.defaultDuration": 231,
     "last.imagePath": "C:/Users/Admin/Documents/QuickTileMap/GAME_ASSITS",
     "last.objectTypesPath": "C:/Users/Admin/Documents/QuickTileMap/Content/Maps/propertytypes.json",
     "map.lastUsedFormat": "tmx",
@@ -68,7 +68,7 @@
         "Map01.tmx"
     ],
     "project": "NewProject.tiled-project",
-    "property.type": "ActionTwo",
+    "property.type": "Action",
     "recentFiles": [
         "Map01.tmx",
         "Map02.tmx",
