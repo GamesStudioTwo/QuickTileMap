@@ -92,6 +92,7 @@ public:
 
     //Actions properties
     void CreateActions(SmartNode* properties , Sprite* sprite);
+    FiniteTimeAction* GetAction( std::map<std::string,std::string> &action , Sprite* sprite );
 
     Size visibleSize;
     Vec2 origin;

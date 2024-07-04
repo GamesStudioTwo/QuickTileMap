@@ -1019,415 +1019,100 @@ std::vector<SmartNode*>QuickTileMap::GetAllPropertiesAsVector( SmartNode * node 
 }
 
 
- /**************************************************************************************************
- * BuildTileMap()                                                                                  *
- * *********************************************************************************************** *
- * Starts building of the tile map                                                                 *
- * *********************************************************************************************** *
- *  Debug Functions                                                                                *
- *   tile->showAllNode();                                                                          *
- *   tile->showAllStorage();                                                                       *
- *   tile->showAllChildren();                                                                      *
- *   SmartNode::ShowTree(map);                                                                     *
- *   SmartNode::ShowDebugInfo(tile);                                                               *
- *   Remember you dealing with pointers some pointers maybe nullptr;                               *
- *   so use if ( tile ) { Check, if Not NULL ptr                                                   *
- *         //Then do something with tile, layer, etc                                               *
- *    }                                                                                            *
- **************************************************************************************************/
-
-void QuickTileMap::BuildTileMap(void) {
-
-
-
-     //Creating Shortcut to map & tileset, you can create your owen as well.
-     tileSet = root->getChildByName("tileset", 1);  // true = recuses find
-     map = root->getChildByName("map", true);          // true = recuses find
-
-    //Set Background colour
-     auto colour = map->getKeyAsString("backgroundcolor");
-     if (!colour.empty()) {
-         auto colour4B = HTMLtoColour(colour);
-         float r = MapTo(colour4B.r, 0.0,255.0 , 0.01 , 1.0 );
-         float g = MapTo(colour4B.g, 0.0,255.0 , 0.01 , 1.0 );
-         float b = MapTo(colour4B.b, 0.0,255.0 , 0.01 , 1.0 );
-         Director::getInstance()->setClearColor( Color4F( r , g,  b, 1) );
-     }
-
-
-#ifdef USE_Z_ORDER
-     auto tileMapNodes = map->getVectorOfChildrenByName( { "objectgroup", "layer" } , false);  // false Not to reverse the order
-#else
-     auto tileMapNodes = map->getVectorOfChildrenByName({"objectgroup", "layer","imagelayer"},true);  // true to reverse the order
-#endif
-
-     //Start TileMap Building
-     for (auto node: tileMapNodes) {
-
-         //Create Tilemap Layer
-         if (node->getName() == "layer") {
-             //Setup Node
-             Node *layer = Node::create();
-             layer->setTag(node->getKeyAsInt("layer"));
-             layer->setName(node->getKeyAsString("name"));
-
-             auto width = map->getKeyAsInt("width");
-             auto height = map->getKeyAsInt("height");
-             auto tileWidth = map->getKeyAsInt("tilewidth");
-             auto tileHeight = map->getKeyAsInt("tileheight");
-             layer->setContentSize(Size(width * tileWidth, height * tileHeight));
-             layer->setPosition(0, height * tileHeight);
-
-             if (node->keyExist("visible")) {
-                 layer->setVisible(false);
-             }
-
-             //Decrypts tile values of the file Storage["value"] Once only.
-             DecryptTileData(node);
-
-             char tileName[128];
-             uint32_t tilepos = 0;
-             uint32_t tileID = 0;
-             uint32_t ID = 0;
-             Sprite *tileSprite;
-             int opacity = 255;
-
-             if (node->keyExist("opacity")) {
-                 opacity = node->getKeyAsFloat("opacity") * 255;
-             }
-
-             Color4B colour4B = Color4B::WHITE;
-             Color3B colour3B = Color3B::WHITE;
-
-             if (node->keyExist("tintcolor")) {
-                 auto colour = node->getKeyAsString("tintcolor");
-                 if (!colour.empty()) {
-                     auto colour4B = HTMLtoColour(colour);
-                     colour3B.r = colour4B.r;
-                     colour3B.g = colour4B.g;
-                     colour3B.b = colour4B.b;
-                     opacity    = MapTo(colour4B.a , 255.0,0.0 , 0.0 , 255.0 );
-                 }
-                 if (colour4B.a != 1 )
-                     opacity = colour4B.a;
-             }
-
-             for (int y = 0; y < height; y++) {
-                 for (int x = 0; x < width; x++) {
-                     tilepos = (y * width) + x;
-                     tileID = node->data[tilepos];
-                     ID = tileID;
-
-                     ID &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG |
-                             FLIPPED_DIAGONALLY_FLAG);
-                     ID = (static_cast<int>((ID & kTMXFlippedMask)));
-
-                     if (ID != 0) {
-                         ID = ID - 1;
-
-                         //See Header file on using .png or .jpeg
-#ifdef USE_EXTENSION
-                         sprintf(tileName, "%04d%s", ID , USE_EXTENSION );
-                         AXLOG("%s",tileName);
-#else
-                         sprintf(tileName, "%04d", ID);
-#endif
-
-
-                         //Check for Animation
-                         auto tile = tileSet->getChildById(ID );
-                         if (tile) {          // Check if Tile Exists in tileSet
-                             auto animation = tile->getChildByName("animation");
-                             if (animation) { // Check if there is animation
-                                 tileSprite = CreateAnimation(animation);
-                             } else {          // else no animation normal tile
-                                 tileSprite = Sprite::createWithSpriteFrameName(tileName);
-                             }
-                         } else {            // No Tile Exists in tileSet normal tile
-                             tileSprite = Sprite::createWithSpriteFrameName(tileName);
-                         }
-
-#ifdef USE_Z_ORDER
-                         tileSprite->setPosition(x * tileWidth + node->getKeyAsFloat("offsetx") + tileWidth / 2 ,  (y * -tileHeight + node->getKeyAsFloat("offsety") - tileHeight / 2) + ( height * tileHeight)  );
-#else
-                         tileSprite->setPosition(((x * tileWidth)) + tileWidth / 2,((y * -tileHeight)) - tileHeight / 2);
-#endif
-
-                         tileSprite->setColor(colour3B);
-                         tileSprite->setOpacity(opacity);
-
-                         tileSprite->setScale(1.00, 1.00);
-                         tileSprite->setFlippedX(false);
-                         tileSprite->setFlippedY(false);
-                         tileSprite->setRotation(0.0f);
-                         tileSprite->setAnchorPoint(Vec2(0.5, 0.5));
-
-                         tileSprite->setTag(tilepos);
-
-                         if (tileID & kTMXTileDiagonalFlag) {
-                             auto flag = tileID & (kTMXTileHorizontalFlag | kTMXTileVerticalFlag);
-                             // handle the 4 diagonally flipped states.
-                             if (flag == kTMXTileHorizontalFlag) {
-                                 tileSprite->setRotation(90.0f);
-                             } else if (flag == kTMXTileVerticalFlag) {
-                                 tileSprite->setRotation(270.0f);
-                             } else if (flag == (kTMXTileVerticalFlag | kTMXTileHorizontalFlag)) {
-                                 tileSprite->setRotation(90.0f);
-                                 tileSprite->setFlippedX(true);
-                             } else {
-                                 tileSprite->setRotation(270.0f);
-                                 tileSprite->setFlippedX(true);
-                             }
-                         } else {
-                             if (tileID & kTMXTileHorizontalFlag) {
-                                 tileSprite->setFlippedX(true);
-                             }
-
-                             if (tileID & kTMXTileVerticalFlag) {
-                                 tileSprite->setFlippedY(true);
-                             }
-                         }
-
-                         #ifdef USE_Z_ORDER
-                         addChild(tileSprite, node->getKeyAsInt("layer") );
-                        #else
-                         layer->addChild(tileSprite);
-                        #endif
-                     }
-                 } // End For x
-             } // End For y
-             #ifndef USE_Z_ORDER
-             layer->setPosition(layer->getPositionX() + node->getKeyAsFloat("offsetx"),
-                                layer->getPositionY() - node->getKeyAsFloat("offsety"));
-             addChild(layer, node->getKeyAsInt("layer"));
-            #endif
-         }  //End Layer
-
-
-         //Create tilemap objectgroup's
-         if ( node->getName() == "objectgroup" ) {
-             auto width = map->getKeyAsInt("width");
-             auto height = map->getKeyAsInt("height");
-             auto tileWidth = map->getKeyAsInt("tilewidth");
-             auto tileHeight = map->getKeyAsInt("tileheight");
-             Vec2 mapSize = Vec2(width * tileWidth, height * tileHeight);
-
-            #ifndef USE_Z_ORDER
-             Node *objectgroup = Node::create();
-             objectgroup->setTag(node->getKeyAsInt("layer"));
-             objectgroup->setName(node->getKeyAsString("name"));
-             objectgroup->setContentSize(mapSize);
-             objectgroup->setPosition(origin.x, origin.y);
-
-             if (node->keyExist("visible")) {
-                 objectgroup->setVisible(false);
-             }
-             addChild(objectgroup, node->getKeyAsInt("layer"));
-            #endif
-
-             int opacity = 255;
-             if (node->keyExist("opacity")) {
-                 opacity = node->getKeyAsFloat("opacity") * 255;
-             }
-
-
-             Color4B colour4B = Color4B::WHITE;
-             Color3B colour3B = Color3B::WHITE;
-             if (node->keyExist("tintcolor")) {
-                 auto colour = node->getKeyAsString("tintcolor");
-                 if (!colour.empty()) {
-                     colour4B = HTMLtoColour(colour);
-                     colour3B.r = colour4B.r;
-                     colour3B.g = colour4B.g;
-                     colour3B.b = colour4B.b;
-                     opacity    = MapTo(colour4B.a , 255.0,0.0 , 0.0 , 255.0 );
-                 }
-                 if (colour4B.a != 1 )
-                     opacity = colour4B.a;
-             }
-
-             //Objects
-             auto smartNodes = node->getVectorOfChildrenByName({"object"});
-
-
-
-             for ( auto smartNode: smartNodes ) {
-
-                 //Start GID Sprite Animation and all that good stuff
-                 if ( smartNode->keyExist("gid") ) {
-                     Sprite *sprite = GetAnimation(smartNode);
-
-                     //Actions Properties Generator
-                     CreateActions(smartNode , sprite);
-
-
-                     auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
-                     sprite->setAnchorPoint(Vec2(0.0,0.0));
-                     sprite->setScale(size.x / tileWidth, size.y / tileHeight);
-                     sprite->setPosition(smartNode->getKeyAsFloat("x") ,-smartNode->getKeyAsFloat("y")  + mapSize.height);
-                     sprite->setColor(colour3B);
-                     sprite->setOpacity(opacity);
-                     sprite->setRotation(smartNode->getKeyAsFloat("rotation"));
-
-                     /************** DEMO for Getting Properties ****************************/
-                     // Loop
-                     /**
-                     auto property = GetPropertiesAsVector(smartNode);
-
-                     for (auto key: property ) {
-
-                         if (key->keyExist("name"))
-                             AXLOG("Name %s", key->getKeyAsChar("name"));
-
-                         if (key->keyExist("type"))
-                             AXLOG("Type %s", key->getKeyAsChar("type"));
-
-                         if (key->keyExist("value"))
-                             AXLOG("value %s", key->getKeyAsChar("value"));
-
-                         if (key->keyExist("prototype"))
-                             AXLOG("Prototype %s", key->getKeyAsChar("prototype"));
-
-                         //key->ShowAllStorage();
-                     } **/
-
-                     //Manual Get
-                     /**
-                     auto properties = smartNode->getChildByName("properties");
-                     if (properties) {
-                         auto key = properties->getChildByName("property");
-
-                         if (key->keyExist("name"))
-                             AXLOG("Manual Name %s", key->getKeyAsChar("name"));
-
-                         if (key->keyExist("type"))
-                             AXLOG("Manual Type %s", key->getKeyAsChar("type"));
-
-                         if (key->keyExist("value"))
-                             AXLOG("Manual value %s", key->getKeyAsChar("value"));
-
-                         if (key->keyExist("prototype"))
-                             AXLOG("Manual Prototype %s", key->getKeyAsChar("prototype"));
-                         //key->ShowAllStorage();
-                     }**/
-
-
-                     // Start of checking if you sprite had Physics attached to it
-                     // then do your Things of how you want to add your physics here
-                     // Don't forget to check the tileSet, as tiles may carry you physics from TILED PROGRAM in "Tile Set Collision Editor"
-                     // auto tile = tileSet->getChiledByID( GID - 1 );   // tiles start a 0 so -1
-                     //      if ( tile ) {   // you found a tile in tileset
-                     //                         // Not done yet tile may only have animation and no physics so false positive that Tile exist
-                     //                         // now do check for any physics parts
-                     //               auto anyPhysicsPartsFound = physics->getVectorOfChildrenByName({"object"});
-                     //                for( auto part : anyPhysicsPartsFound ) {
-                     //                        //Start building your Physics parts
-                     //                }
-                     //           }
-
-
-                     #ifdef USE_Z_ORDER
-                     addChild(sprite,node->getKeyAsInt("layer"));
-                     #else
-                     objectgroup->addChild(sprite);
-                     #endif
-                 }       // No GID Start Physics object's Only no Sprite data
-
-                 else {
-
-                     /**  Getting Text **/
-                     SmartNode* object = smartNode->getChildByName(   "text");
-                     if ( object ) { // if text
-                         //This is the object part
-                         float x      = smartNode->getKeyAsFloat("x");
-                         float y      = smartNode->getKeyAsFloat("y");
-                         float width  = smartNode->getKeyAsFloat("width")  ; //My font size
-                         float height = smartNode->getKeyAsFloat("height");
-                         float pixalSize = object->getKeyAsFloat("pixelsize");
-
-                         //if you have added property's
-                         auto property = GetPropertiesAsVector(smartNode);
-                         //Loop through them See below DEMO
-
-                         //Now Do text Part
-                         if ( object->keyExist( "wrap") ) {
-                             // do wrap
-                         }
-
-                         std::string yourString = object->getKeyAsString("value"); //value is always data converted in ConcatenateData() because of \r\n
-                         //AXLOG("yourString >> %s", yourString.c_str());
-
-                         Label* bitmapText = CreateTextLabel(yourString);
-                         bitmapText->setContentSize(Vec2(width,height));
-                         bitmapText->setBMFontSize(pixalSize);
-                         bitmapText->setAnchorPoint(Vec2(0,1));
-                         bitmapText->setPosition( x ,  -y  +  mapSize.height ); // Should make macro
-                         bitmapText->setRotation(smartNode->getKeyAsFloat("rotation"));
-                         if ( object->keyExist( "color") ) {
-                             auto colour = GetObjectColour(object);
-                             bitmapText->setColor(Color3B(colour.r,colour.g,colour.b));
-                             bitmapText->setOpacity(colour.a);
-                         }
-                        #ifdef USE_Z_ORDER
-                         addChild(bitmapText,node->getKeyAsInt("layer"));
-                        #else
-                         objectgroup->addChild( bitmapText );
-                        #endif
-                         continue;
-                     }  // End Getting Text
-
-                     //Begin Physics Objects Only No sprite
-                     object = smartNode->getChildByName(   "point/");
-                     if ( object ) {
-                         // smartNode Object only
-                         auto property = GetPropertiesAsVector(smartNode);
-                         // Do your loop Thing
-                         AXLOG("You Found point");
-                         continue;
-                     }
-
-                     object = smartNode->getChildByName(   "ellipse/");
-                     if ( object ) {
-                         AXLOG("You Found ellipse");
-                         continue;
-                     }
-
-                     object = smartNode->getChildByName(   "polygon");
-                     if ( object ) {
-                         AXLOG("You Found polygon");
-                         continue;
-                     }
-
-                     object = smartNode->getChildByName(   "polyline");
-                     if ( object ) {
-                         AXLOG("You Found polyline");
-                         continue;
-                     }
-
-
-                     object = smartNode->getChildByName(   "rectangle/");
-                     if ( object ) {
-                        AXLOG("You Found rectangle ");
-                      }
-
-
-
-                 }
-
-             } // End for Loop
-         } // End Objectgroupe
-
-
-     }   // End for tileMapNodes
-
-    // SmartNode::ShowTree(root);
-
-
- }
-
-
-
-
+/**************************************************************************************************
+ * GetAction                                                                                      *
+ **************************************************************************************************
+ * Create and return a finite Action that will be pushed onto a sequence buffer                   *
+ * part of CreateActions().                                                                       *
+ *************************************************************************************************/
+
+FiniteTimeAction* QuickTileMap::GetAction( std::map<std::string,std::string> &action , Sprite* sprite )
+{
+    if ( action["DelayTime"].size() > 0  ) {
+        float duration = std::atof( action["Duration"].c_str() );
+        return DelayTime::create(duration );
+    }
+
+    if ( action["Blink"].size() > 0  ) {
+        float duration = std::atof( action["Duration"].c_str() );
+        int times = std::atoi( action["Times"].c_str() );
+        return Blink::create(duration, times);
+    }
+
+    if ( action["MoveBy"].size() > 0  ) {
+        float x = std::atof( action["X"].c_str() );
+        float y = std::atof( action["Y"].c_str() );
+        float duration = std::atof( action["Duration"].c_str() );
+        return MoveBy::create( duration,Vec2( x, y) );
+    }
+
+    if ( action["MoveTo"].size() > 0  ) {
+        float x = std::atof( action["X"].c_str() );
+        float y = std::atof( action["Y"].c_str() );
+        float duration = std::atof( action["Duration"].c_str() );
+        return MoveTo::create( duration,Vec2( x, y) );
+    }
+
+    if ( action["ScaleBy"].size() > 0  ) {
+        float x = std::atof( action["X"].c_str() );
+        float y = std::atof( action["Y"].c_str() );
+        float duration = std::atof( action["Duration"].c_str() );
+        return ScaleBy::create( duration,1 * x, 1 * y );
+    }
+
+    if ( action["ScaleTo"].size() > 0  ) {
+        float x = std::atof( action["X"].c_str() );
+        float y = std::atof( action["Y"].c_str() );
+        float duration = std::atof( action["Duration"].c_str() );
+        return ScaleTo::create( duration, x / sprite->getContentSize().width , y / sprite->getContentSize().height );
+      }
+
+    if ( action["RotateTo"].size() > 0  ) {
+        float x = std::atof( action["X"].c_str() );
+        float y = std::atof( action["Y"].c_str() );
+        float duration = std::atof( action["Duration"].c_str() );
+        float angle = std::atof( action["Angle"].c_str() );
+        if( x != 0 || y !=0 )
+            sprite->setAnchorPoint(Vec2( x, y));
+        else
+            sprite->setAnchorPoint(Vec2( 0.5,0.5));
+        return RotateTo::create( duration, angle );
+    }
+
+    if ( action["RotateBy"].size() > 0  ) {
+        float x = std::atof( action["X"].c_str() );
+        float y = std::atof( action["Y"].c_str() );
+        float duration = std::atof( action["Duration"].c_str() );
+        float angle = std::atof( action["Angle"].c_str() );
+
+        if( x != 0 || y !=0 )
+            sprite->setAnchorPoint(Vec2( x, y));
+        else
+            sprite->setAnchorPoint(Vec2( 0.5,0.5));
+        return RotateBy::create( duration, angle );
+        }
+
+
+    if ( action["FadeOut"].size() > 0  ) {
+        float duration = std::atof( action["Duration"].c_str() );
+        return FadeOut::create( duration );
+    }
+
+    if ( action["FadeIn"].size() > 0  ) {
+        float duration = std::atof( action["Duration"].c_str() );
+        return FadeIn::create( duration );
+    }
+
+    return nullptr;
+}
+
+
+
+/**************************************************************************************************
+ * CreateActions                                                                                  *
+ **************************************************************************************************
+ * Creates and runs Actions from properties                                                       *
+ *************************************************************************************************/
 void QuickTileMap::CreateActions( SmartNode* properties , Sprite* sprite )
  {
     auto test = properties->getChildByName("properties");
@@ -1440,125 +1125,452 @@ void QuickTileMap::CreateActions( SmartNode* properties , Sprite* sprite )
      bool  repeat        = false;
      int   repeatAmount  = 0;
      ax::Vector<ax::FiniteTimeAction*>sequenceBuffer;
+
           for ( auto child : test->getChildren() ) {
+              auto prototype = child->getKeyAsString("propertytype");
 
-                auto prototype = child->getKeyAsString("propertytype");
+              /**
+               * Get One Action
+               ***/
+              if ( prototype == "Action" ) {
+                  std::map<std::string, std::string> data;
+                  auto property = child->getAllChildrenByName("property", true);
+                  for (auto p: property) {
+                      if (p->getKeyAsString("name") == "ActionType") {
+                          data[p->getKeyAsString("value")] = p->getKeyAsString("name");
+                      } else {
+                          data[p->getKeyAsString("name")] = p->getKeyAsString("value");
+                      }
+                  }
 
-                 if ( prototype ==  "Action" || prototype == "ActionTwo" ) {
+                  //Now get the Action
+                  auto action = GetAction(data, sprite);
+                  if (action)
+                      sequenceBuffer.pushBack(action);
 
-                     auto property = child->getAllChildrenByName("property", true);
-                        std::map<std::string,std::string>data;
-                        for ( auto p : property ) {
-                          if( p->getKeyAsString("name") == "ActionType") {
-                              data[p->getKeyAsString("value")] = p->getKeyAsString("name");
-                              } else {
-                              data[p->getKeyAsString("name")] = p->getKeyAsString("value");
+                  if ( data["Repeat"].size() > 0  ) {
+                      repeat = true;
+                      repeatAmount =  std::atoi( data["Times"].c_str() );
+                  }
+
+                  if ( data["Repeat Forever"].size() > 0  ) {
+                      repeatForever = true;
+                  }
+              }
+
+                /**
+                 * Get Two Actions
+                 ***/
+              if( prototype == "ActionTwo" ) {
+                  std::vector<FiniteTimeAction*> actions ;
+                  // Get the ptr to the 2 actions
+                  auto towActions = child->getNext()->getAllChildrenByName(  "property" );
+                       for( auto node : towActions ) {
+                           //Now get action1 and Action2
+                            auto property = node->getNext()->getAllChildrenByName("property");
+                            std::map<std::string, std::string> data;
+                            //get the property value and name, X, Y, Duration, MoveBy, etc
+                            for( auto p : property ) {
+                              if ( p->getKeyAsString("name") == "ActionType") {
+                                   data[ p->getKeyAsString("value" ) ] = p->getKeyAsString("name" );
+                               } else {
+                                   data[ p->getKeyAsString("name" ) ] = p->getKeyAsString("value" );
+                               }
+                            }
+
+                            //Now get one Action and and push back
+                            auto action = GetAction(data , sprite);
+                            if( action ) {
+                                actions.push_back( action );
                             }
                         }
 
-                     if ( data["DelayTime"].size() > 0  ) {
-                         float duration = std::atof( data["Duration"].c_str() );
-                         DelayTime *delay = DelayTime::create(duration );
-                         sequenceBuffer.pushBack(delay);
-                     }
+               if ( actions[0] && actions[1]) {
+                      auto  twoAction = Spawn::createWithTwoActions(actions[0],actions[1]);
+                      sequenceBuffer.pushBack(twoAction);
+                  }
+              }
+          } // End for Loop
 
-                     if ( data["Blink"].size() > 0  ) {
-                         float duration = std::atof( data["Duration"].c_str() );
-                         int times = std::atoi( data["Times"].c_str() );
-                         Blink *blink = Blink::create(duration, times);
-                         sequenceBuffer.pushBack(blink);
-                     }
+     if ( sequenceBuffer.empty() ){ return; }
+       Sequence* seq = Sequence::create( sequenceBuffer);
 
-                     if ( data["MoveBy"].size() > 0  ) {
-                         float x = std::atof( data["X"].c_str() );
-                         float y = std::atof( data["Y"].c_str() );
-                         float duration = std::atof( data["Duration"].c_str() );
-                         MoveBy *moveBy = MoveBy::create( duration,Vec2( x, y) );
-                         sequenceBuffer.pushBack(moveBy);
-                     }
-
-                     if ( data["MoveTo"].size() > 0  ) {
-                         float x = std::atof( data["X"].c_str() );
-                         float y = std::atof( data["Y"].c_str() );
-                         float duration = std::atof( data["Duration"].c_str() );
-                         MoveBy *moveTo = MoveTo::create( duration,Vec2( x, y) );
-                         sequenceBuffer.pushBack(moveTo);
-                     }
-
-                     if ( data["ScaleBy"].size() > 0  ) {
-                         float x = std::atof( data["X"].c_str() );
-                         float y = std::atof( data["Y"].c_str() );
-                         float duration = std::atof( data["Duration"].c_str() );
-                         ScaleBy *scaleBy = ScaleBy::create( duration,1 * x, 1 * y );
-                         sequenceBuffer.pushBack(scaleBy);
-                     }
-
-                     if ( data["ScaleTo"].size() > 0  ) {
-                         float x = std::atof( data["X"].c_str() );
-                         float y = std::atof( data["Y"].c_str() );
-                         float duration = std::atof( data["Duration"].c_str() );
-                         ScaleTo *scaleTo = ScaleTo::create( duration,x / sprite->getContentSize().width , y / sprite->getContentSize().height );
-                         sequenceBuffer.pushBack(scaleTo);
-                     }
-
-                     if ( data["RotateTo"].size() > 0  ) {
-                         float x = std::atof( data["X"].c_str() );
-                         float y = std::atof( data["Y"].c_str() );
-                         float duration = std::atof( data["Duration"].c_str() );
-                         float angle = std::atof( data["Angle"].c_str() );
-                         RotateTo *rotateTo = RotateTo::create( duration, angle );
-                         if( x != 0 || y !=0 )
-                             sprite->setAnchorPoint(Vec2( x, y));
-                         else
-                             sprite->setAnchorPoint(Vec2( 0.5,0.5));
-                         sequenceBuffer.pushBack(rotateTo );
-                     }
-
-                     if ( data["RotateBy"].size() > 0  ) {
-                         float x = std::atof( data["X"].c_str() );
-                         float y = std::atof( data["Y"].c_str() );
-                         float duration = std::atof( data["Duration"].c_str() );
-                         float angle = std::atof( data["Angle"].c_str() );
-                         RotateBy *rotateBy = RotateBy::create( duration, angle );
-                         if( x != 0 || y !=0 )
-                             sprite->setAnchorPoint(Vec2( x, y));
-                         else
-                             sprite->setAnchorPoint(Vec2( 0.5,0.5));
-                         sequenceBuffer.pushBack(rotateBy );
-                     }
-
-                     if ( data["FadeOut"].size() > 0  ) {
-                         float duration = std::atof( data["Duration"].c_str() );
-                         FadeOut *fadeOut = FadeOut::create( duration );
-                         sequenceBuffer.pushBack(fadeOut);
-                     }
-
-                     if ( data["FadeIn"].size() > 0  ) {
-                         float duration = std::atof( data["Duration"].c_str() );
-                         FadeIn *fadeIn = FadeIn::create( duration );
-                         sequenceBuffer.pushBack(fadeIn);
-                     }
-
-                     if ( data["Repeat"].size() > 0  ) {
-                         repeat = true;
-                         repeatAmount =  std::atoi( data["Times"].c_str() );
-                     }
-
-                     if ( data["Repeat Forever"].size() > 0  ) {
-                         repeatForever = true;
-                     }
-                 } // End for ( auto child : test->getChildren() ){}
-            }
-
-     if ( sequenceBuffer.empty() ) return;
-
-     Sequence* seq = Sequence::create( sequenceBuffer);
      if( repeatForever ||  repeat ) {
          if( repeatForever )
              sprite->runAction(RepeatForever::create(seq));
          else
              sprite->runAction(Repeat::create(seq, repeatAmount ) );
      } else {
-         sprite->runAction(seq);
+             sprite->runAction(seq);
      }
  }
+
+
+/**************************************************************************************************
+* BuildTileMap()                                                                                  *
+* *********************************************************************************************** *
+* Starts building of the tile map                                                                 *
+* *********************************************************************************************** *
+*  Debug Functions                                                                                *
+*   tile->showAllNode();                                                                          *
+*   tile->showAllStorage();                                                                       *
+*   tile->showAllChildren();                                                                      *
+*   SmartNode::ShowTree(map); , root, node , tileSet , etc                                        *
+*   SmartNode::ShowDebugInfo(tile);                                                               *
+*   Remember you dealing with pointers some pointers maybe nullptr;                               *
+*   so use if ( tile ) { Check, if Not NULL ptr                                                   *
+*         //Then do something with tile, layer, etc                                               *
+*    }                                                                                            *
+**************************************************************************************************/
+
+void QuickTileMap::BuildTileMap( void )
+{
+    //Creating Shortcut to map & tileset, you can create your owen as well.
+    tileSet = root->getChildByName("tileset", 1);  // true = recuses find
+    map = root->getChildByName("map", true);       // true = recuses find
+
+    //Set Background colour
+    auto colour = map->getKeyAsString("backgroundcolor");
+    if (!colour.empty()) {
+        auto colour4B = HTMLtoColour(colour);
+        float r = MapTo(colour4B.r, 0.0,255.0 , 0.01 , 1.0 );
+        float g = MapTo(colour4B.g, 0.0,255.0 , 0.01 , 1.0 );
+        float b = MapTo(colour4B.b, 0.0,255.0 , 0.01 , 1.0 );
+        Director::getInstance()->setClearColor( Color4F( r , g,  b, 1) );
+    }
+
+
+#ifdef USE_Z_ORDER
+    auto tileMapNodes = map->getVectorOfChildrenByName( { "objectgroup", "layer" } , false);  // false Not to reverse the order
+#else
+    auto tileMapNodes = map->getVectorOfChildrenByName({ "objectgroup", "layer", "imagelayer", "group"},true);  // true to reverse the order
+#endif
+
+    //Start TileMap Building
+    for ( auto node: tileMapNodes ) {
+
+
+        /** Do something with an group **/
+        if ( node->getName() == "group" ) {
+           // AXLOG("Found Group");
+        }
+
+        /** Do something with an imagelayer **/
+        if ( node->getName() == "imagelayer" ) {
+           // AXLOG("Found imagelayer");
+        }
+
+
+        //This Creates Tilemap Layer's
+        /** Move this to your owen Function if you wish to unclutter
+         *  Example: BuildLayer(SmartNode* layerNode); <- and just pass it the node
+         ***/
+        if ( node->getName() == "layer") { // <-- leave check here & put function here insted.
+            //Setup Node
+            Node *layer = Node::create();
+            layer->setTag(node->getKeyAsInt("layer"));
+            layer->setName(node->getKeyAsString("name"));
+
+            auto width = map->getKeyAsInt("width");
+            auto height = map->getKeyAsInt("height");
+            auto tileWidth = map->getKeyAsInt("tilewidth");
+            auto tileHeight = map->getKeyAsInt("tileheight");
+            layer->setContentSize(Size(width * tileWidth, height * tileHeight));
+            layer->setPosition(0, height * tileHeight);
+
+            if (node->keyExist("visible")) {
+                layer->setVisible(false);
+            }
+
+            //Decrypts tile values of the file Storage["value"] Once only.
+            DecryptTileData(node);
+
+            char tileName[128];
+            uint32_t tilepos = 0;
+            uint32_t tileID = 0;
+            uint32_t ID = 0;
+            Sprite *tileSprite;
+            int opacity = 255;
+
+            if (node->keyExist("opacity")) {
+                opacity = node->getKeyAsFloat("opacity") * 255;
+            }
+
+            Color4B colour4B = Color4B::WHITE;
+            Color3B colour3B = Color3B::WHITE;
+
+            if (node->keyExist("tintcolor")) {
+                auto colour = node->getKeyAsString("tintcolor");
+                if (!colour.empty()) {
+                    auto colour4B = HTMLtoColour(colour);
+                    colour3B.r = colour4B.r;
+                    colour3B.g = colour4B.g;
+                    colour3B.b = colour4B.b;
+                    opacity    = MapTo(colour4B.a , 255.0,0.0 , 0.0 , 255.0 );
+                }
+                if (colour4B.a != 1 )
+                    opacity = colour4B.a;
+            }
+
+            for (int y = 0; y < height; y++) {
+                for (int x = 0; x < width; x++) {
+                    tilepos = (y * width) + x;
+                    tileID = node->data[tilepos];
+                    ID = tileID;
+
+                    ID &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG |
+                            FLIPPED_DIAGONALLY_FLAG);
+                    ID = (static_cast<int>((ID & kTMXFlippedMask)));
+
+                    if (ID != 0) {
+                        ID = ID - 1;
+
+                        //See Header file on using .png or .jpeg
+#ifdef USE_EXTENSION
+                        sprintf(tileName, "%04d%s", ID , USE_EXTENSION );
+                         AXLOG("%s",tileName);
+#else
+                        sprintf(tileName, "%04d", ID);
+#endif
+
+
+                        //Check for Animation
+                        auto tile = tileSet->getChildById(ID );
+                        if (tile) {          // Check if Tile Exists in tileSet
+                            auto animation = tile->getChildByName("animation");
+                            if (animation) { // Check if there is animation
+                                tileSprite = CreateAnimation(animation);
+                            } else {          // else no animation normal tile
+                                tileSprite = Sprite::createWithSpriteFrameName(tileName);
+                            }
+                        } else {            // No Tile Exists in tileSet normal tile
+                            tileSprite = Sprite::createWithSpriteFrameName(tileName);
+                        }
+
+#ifdef USE_Z_ORDER
+                        tileSprite->setPosition(x * tileWidth + node->getKeyAsFloat("offsetx") + tileWidth / 2 ,  (y * -tileHeight + node->getKeyAsFloat("offsety") - tileHeight / 2) + ( height * tileHeight)  );
+#else
+                        tileSprite->setPosition(((x * tileWidth)) + tileWidth / 2,((y * -tileHeight)) - tileHeight / 2);
+#endif
+
+                        tileSprite->setColor(colour3B);
+                        tileSprite->setOpacity(opacity);
+
+                        tileSprite->setScale(1.00, 1.00);
+                        tileSprite->setFlippedX(false);
+                        tileSprite->setFlippedY(false);
+                        tileSprite->setRotation(0.0f);
+                        tileSprite->setAnchorPoint(Vec2(0.5, 0.5));
+
+                        tileSprite->setTag(tilepos);
+
+                        if (tileID & kTMXTileDiagonalFlag) {
+                            auto flag = tileID & (kTMXTileHorizontalFlag | kTMXTileVerticalFlag);
+                            // handle the 4 diagonally flipped states.
+                            if (flag == kTMXTileHorizontalFlag) {
+                                tileSprite->setRotation(90.0f);
+                            } else if (flag == kTMXTileVerticalFlag) {
+                                tileSprite->setRotation(270.0f);
+                            } else if (flag == (kTMXTileVerticalFlag | kTMXTileHorizontalFlag)) {
+                                tileSprite->setRotation(90.0f);
+                                tileSprite->setFlippedX(true);
+                            } else {
+                                tileSprite->setRotation(270.0f);
+                                tileSprite->setFlippedX(true);
+                            }
+                        } else {
+                            if (tileID & kTMXTileHorizontalFlag) {
+                                tileSprite->setFlippedX(true);
+                            }
+
+                            if (tileID & kTMXTileVerticalFlag) {
+                                tileSprite->setFlippedY(true);
+                            }
+                        }
+
+#ifdef USE_Z_ORDER
+                        addChild(tileSprite, node->getKeyAsInt("layer") );
+#else
+                        layer->addChild(tileSprite);
+#endif
+                    }
+                } // End For x
+            } // End For y
+#ifndef USE_Z_ORDER
+            layer->setPosition(layer->getPositionX() + node->getKeyAsFloat("offsetx"),
+                               layer->getPositionY() - node->getKeyAsFloat("offsety"));
+            addChild(layer, node->getKeyAsInt("layer"));
+#endif
+        }  //End fo creating a layer
+
+
+        /**
+         * This Creates objectgroup's
+         **/
+
+        if ( node->getName() == "objectgroup" ) {
+            auto width = map->getKeyAsInt("width");
+            auto height = map->getKeyAsInt("height");
+            auto tileWidth = map->getKeyAsInt("tilewidth");
+            auto tileHeight = map->getKeyAsInt("tileheight");
+            Vec2 mapSize = Vec2(width * tileWidth, height * tileHeight);
+
+#ifndef USE_Z_ORDER
+            Node *objectgroup = Node::create();
+            objectgroup->setTag(node->getKeyAsInt("layer"));
+            objectgroup->setName(node->getKeyAsString("name"));
+            objectgroup->setContentSize(mapSize);
+            objectgroup->setPosition(origin.x, origin.y);
+
+            if (node->keyExist("visible")) {
+                objectgroup->setVisible(false);
+            }
+            addChild(objectgroup, node->getKeyAsInt("layer"));
+#endif
+
+            int opacity = 255;
+            if (node->keyExist("opacity")) {
+                opacity = node->getKeyAsFloat("opacity") * 255;
+            }
+
+
+            Color4B colour4B = Color4B::WHITE;
+            Color3B colour3B = Color3B::WHITE;
+            if (node->keyExist("tintcolor")) {
+                auto colour = node->getKeyAsString("tintcolor");
+                if (!colour.empty()) {
+                    colour4B = HTMLtoColour(colour);
+                    colour3B.r = colour4B.r;
+                    colour3B.g = colour4B.g;
+                    colour3B.b = colour4B.b;
+                    opacity    = MapTo(colour4B.a , 255.0,0.0 , 0.0 , 255.0 );
+                }
+                if (colour4B.a != 1 )
+                    opacity = colour4B.a;
+            }
+
+            //Objects
+            auto smartNodes = node->getVectorOfChildrenByName({"object"});
+
+
+
+            for ( auto smartNode: smartNodes ) {
+
+                //Start GID Sprite Animation and all that good stuff
+                if ( smartNode->keyExist("gid") ) {
+                    Sprite *sprite = GetAnimation(smartNode);
+
+                    auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
+                    sprite->setAnchorPoint(Vec2(0.5,0.5));
+                    sprite->setScale(size.x / tileWidth, size.y / tileHeight);
+                    sprite->setPosition(smartNode->getKeyAsFloat("x") + size.x / 2 ,-smartNode->getKeyAsFloat("y") +  size.y / 2  + mapSize.height);
+                    sprite->setColor(colour3B);
+                    sprite->setOpacity(opacity);
+                    sprite->setRotation(smartNode->getKeyAsFloat("rotation"));
+
+                    //Actions Properties Generator
+                    CreateActions(smartNode , sprite);
+
+                    // Start checking if your sprite had Physics attached to it
+                    // then do your Things, how you want to add your physics here
+                    // Don't forget to check the tileSet, as tiles will carry your physics from TILED PROGRAM in "Tile Set Collision Editor"
+                    // auto tile = tileSet->getChiledByID( GID - 1 );   // tiles start a 0 so must -1 the gid
+                    //      if ( tile ) {   // you found a tile in tileset
+                    //                         // Not done yet tile may only have animation and no physics so false positive that Tile exist
+                    //                         // now do check for any physics parts
+                    //               auto anyPhysicsPartsFound = physics->getVectorOfChildrenByName({"object"});
+                    //                for( auto part : anyPhysicsPartsFound ) {
+                    //                         //Start building your Physics parts on one body
+                    //                         // This is how you build complex shapes
+                    //                }
+                    //           }
+
+
+#ifdef USE_Z_ORDER
+                    addChild(sprite,node->getKeyAsInt("layer"));
+#else
+                    objectgroup->addChild(sprite);
+#endif
+                }  else {
+
+                    /**
+                     * This Create's object's
+                     **/
+
+                    /** No GID Start Physics object's Only no Sprite data **/
+
+                    /**  Getting Text Move this to your owen Function if you wish to declutter **/
+                    SmartNode* object = smartNode->getChildByName(   "text");
+                    if ( object ) { // if text
+                        //This is the object part
+                        float x      = smartNode->getKeyAsFloat("x");
+                        float y      = smartNode->getKeyAsFloat("y");
+                        float width  = smartNode->getKeyAsFloat("width")  ; //My font size
+                        float height = smartNode->getKeyAsFloat("height");
+                        float pixalSize = object->getKeyAsFloat("pixelsize");
+
+                        //if you have added property's
+                        auto property = GetPropertiesAsVector(smartNode);
+                        //Loop through them and do someting with them
+
+                        //Now extract your wrap , font name , etc
+                        if ( object->keyExist( "wrap") ) {
+                            // do wrap
+                        }
+
+                        std::string yourText = object->getKeyAsString("value"); //value is always data it was converted in ConcatenateData() because of \r\n
+                        //AXLOG("yourString >> %s", yourString.c_str());
+                        Label* bitmapText = CreateTextLabel(yourText);
+                        bitmapText->setContentSize(Vec2(width,height));
+                        bitmapText->setBMFontSize(pixalSize);
+                        bitmapText->setAnchorPoint(Vec2(0,1));
+                        bitmapText->setPosition( x ,  -y  +  mapSize.height ); // Should make macro
+                        bitmapText->setRotation(smartNode->getKeyAsFloat("rotation"));
+                        if ( object->keyExist( "color") ) {
+                            auto colour = GetObjectColour(object);
+                            bitmapText->setColor(Color3B(colour.r,colour.g,colour.b));
+                            bitmapText->setOpacity(colour.a);
+                        }
+#ifdef USE_Z_ORDER
+                        addChild(bitmapText,node->getKeyAsInt("layer"));
+#else
+                        objectgroup->addChild( bitmapText );
+#endif
+                    }  // End Getting Text
+
+
+                    //Begin Physics Objects Only No sprite
+                    object = smartNode->getChildByName(   "point/");
+                    if ( object ) {
+                        // smartNode Object only
+                        auto property = GetPropertiesAsVector(smartNode);
+                        // Do your loop Thing
+                        AXLOG("You Found point");
+                    }
+
+                    object = smartNode->getChildByName(   "ellipse/");
+                    if ( object ) {
+                        AXLOG("You Found ellipse");
+                    }
+
+                    object = smartNode->getChildByName(   "polygon");
+                    if ( object ) {
+                        AXLOG("You Found polygon");
+                    }
+
+                    object = smartNode->getChildByName(   "polyline");
+                    if ( object ) {
+                        AXLOG("You Found polyline");
+                    }
+
+
+                    object = smartNode->getChildByName(   "rectangle/");
+                    if ( object ) {
+                        AXLOG("You Found rectangle ");
+                    }
+                }
+
+            } // End for Loop
+        } // End Objectgroupe
+    }   // End for tileMapNodes
+}

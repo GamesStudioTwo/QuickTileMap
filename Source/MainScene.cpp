@@ -46,6 +46,15 @@ bool MainScene::init()
 
     setName("Axmol");
 
+
+    /**
+        if using android Studio * click build -> Refresh Linked c++ projects before building "Sync wont work"
+        do same when adding new class this is because we now get .cpp an .h in wildcard format so you don't have to keep
+        add your .cpp and .h files to the CMakeLists.txt
+     **/
+
+
+
     /** Add you SpriteSheet Name Here **/
                                           //7704a465           0b715ae6            04b013b0            533bbf8e
     ZipUtils::setPvrEncryptionKey(0x7704a465, 0x0b715ae6, 0x04b013b0, 0x533bbf8e);
@@ -55,9 +64,9 @@ bool MainScene::init()
     QTM->LoadMap("Maps/Map01.tmx");
     addChild(QTM);
 
-
-    //DebugNodes *debug = DebugNodes::create();
-    //debug->DebugNode(this);
+    // SmartNode::ShowTree(QTM->root);
+    // DebugNodes *debug = DebugNodes::create();
+    // debug->DebugNode(this);
 
     return true;
 }
