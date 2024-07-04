@@ -54,29 +54,6 @@
             ]
         },
         {
-            "id": 6,
-            "name": "ActionType",
-            "storageType": "string",
-            "type": "enum",
-            "values": [
-                "Select Type",
-                "DelayTime",
-                "Blink",
-                "MoveBy",
-                "MoveTo",
-                "ScaleBy",
-                "ScaleTo",
-                "RotateTo",
-                "RotateBy",
-                "Repeat",
-                "Repeat Forever",
-                "Remove Self",
-                "FadeIn",
-                "FadeOut"
-            ],
-            "valuesAsFlags": false
-        },
-        {
             "color": "#ffa0a0a4",
             "drawFill": true,
             "id": 45,
@@ -99,16 +76,31 @@
             "name": "ActionTwo",
             "type": "class",
             "useAs": [
-                "property",
-                "map",
-                "layer",
-                "object",
-                "tile",
-                "tileset",
-                "wangcolor",
-                "wangset",
-                "project"
+                "property"
             ]
+        },
+        {
+            "id": 6,
+            "name": "ActionType",
+            "storageType": "string",
+            "type": "enum",
+            "values": [
+                "Select Type",
+                "DelayTime",
+                "Blink",
+                "MoveBy",
+                "MoveTo",
+                "ScaleBy",
+                "ScaleTo",
+                "RotateTo",
+                "RotateBy",
+                "Repeat",
+                "Repeat Forever",
+                "Remove Self",
+                "FadeIn",
+                "FadeOut"
+            ],
+            "valuesAsFlags": false
         }
     ]
 }

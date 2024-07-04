@@ -1481,7 +1481,7 @@ void QuickTileMap::BuildTileMap( void )
             objectgroup->setContentSize(mapSize);
             objectgroup->setPosition(origin.x, origin.y);
 
-            if (node->keyExist("visible")) {
+            if ( node->keyExist("visible") ) {
                 objectgroup->setVisible(false);
             }
             addChild(objectgroup, node->getKeyAsInt("layer"));
@@ -1520,7 +1520,9 @@ void QuickTileMap::BuildTileMap( void )
 
                     Sprite *sprite = GetAnimation(smartNode);
 
-
+                    if ( smartNode->keyExist("visible") ) {
+                        sprite->setVisible(false);
+                    }
 
                     auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
 

@@ -26,7 +26,6 @@
    </animation>
   </tile>
  </tileset>
- <objectgroup id="19" name="Object Layer 2"/>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
    eJxzZhgFo2AUjALSABOVMSn2UguM2jtq76i9I8fegSivALK1ALg=
@@ -40,7 +39,7 @@
    <text wrap="1">SmartNode 
 TileMap</text>
   </object>
-  <object id="18" gid="33" x="448" y="1152" width="64" height="64">
+  <object id="18" name="Name Here" gid="33" x="448" y="1152" width="64" height="64">
    <properties>
     <property name="Action001" type="class" propertytype="ActionTwo">
      <properties>
