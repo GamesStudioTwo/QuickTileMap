@@ -35,6 +35,8 @@ bool QuickTileMap::init()  {
     setName("ID_TILE_MAP_NODE");
 
 
+
+
     visibleSize = _director->getVisibleSize();
     origin = _director->getVisibleOrigin();
     safeArea = _director->getSafeAreaRect();
@@ -1522,7 +1524,7 @@ void QuickTileMap::BuildTileMap( void )
 
                     if ( smartNode->keyExist("visible") ) {
                         sprite->setVisible(false);
-                    }
+                     }
 
                     auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
 

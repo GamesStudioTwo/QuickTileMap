@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="20" nextobjectid="30">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="20" nextobjectid="31">
  <tileset firstgid="1" name="TileMap" tilewidth="64" tileheight="64" tilecount="1024" columns="32">
   <image source="../../GAME_ASSITS/TileMap.png" width="2048" height="2048"/>
   <tile id="9">
@@ -28,7 +28,7 @@
  </tileset>
  <layer id="1" name="Tile Layer 1" width="30" height="20">
   <data encoding="base64" compression="zlib">
-   eJxzZhgFo2AUjALSABOVMSn2UguM2jtq76i9I8fegSivALK1ALg=
+   eJxzZhgFo2AUjALSABOVMSn2sjIwOFDqfqAZCqTaSy0wau+ovSPZXlYq2Ak0I4FUeweivAIA3NsBjA==
   </data>
  </layer>
  <objectgroup id="16" name="Object Layer 1">
@@ -39,7 +39,7 @@
    <text wrap="1">SmartNode 
 TileMap</text>
   </object>
-  <object id="18" name="Name Here" gid="33" x="448" y="1152" width="64" height="64">
+  <object id="18" gid="33" x="512" y="1152" width="64" height="64" rotation="-90">
    <properties>
     <property name="Action001" type="class" propertytype="ActionTwo">
      <properties>
@@ -94,6 +94,7 @@ TileMap</text>
    </properties>
   </object>
   <object id="27" gid="10" x="768" y="914.788" width="212" height="212"/>
+  <object id="30" gid="10" x="290" y="919.333" width="212" height="212"/>
  </objectgroup>
  <imagelayer id="17" name="Image Layer 1"/>
  <group id="18" name="Group Layer 1"/>
