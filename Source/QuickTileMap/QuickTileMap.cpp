@@ -895,36 +895,93 @@ Sprite * QuickTileMap::CreateAnimation( SmartNode*  node )
 Sprite * QuickTileMap::GetAnimation( SmartNode*  node )
 {
     Sprite*  sprite;
-    auto test = node->getChildByName("animation",true);
 
+    uint32_t tileID  = node->getKeyAsInt("gid");;
+    uint32_t ID =  tileID;
+    ID &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG |  FLIPPED_DIAGONALLY_FLAG);
+    ID = (static_cast<int>((ID & kTMXFlippedMask)));
+
+    auto test = node->getChildByName("animation",true);
             if ( test ) {
                 return CreateAnimation( node );
             }
 
         if ( node->keyExist("gid") ) {
-            auto gid = node->getKeyAsInt("gid");
-            auto tile = tileSet->getChildById(gid - 1); // tile's in tileset start a 0
+
+            ID &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG |  FLIPPED_DIAGONALLY_FLAG);
+            ID = (static_cast<int>((ID & kTMXFlippedMask)));
+
+            auto tile = tileSet->getChildById( ID -1 ); // tile's in tileset start a 0
+
             if (tile) {          // Check if Tile Exists in tileSet
                 auto animation = tile->getChildByName("animation");
 
                 if (animation) {  // Check if there is animation
-                    return CreateAnimation(animation);
+
+                    auto sprite =  CreateAnimation(animation);
+
+                    if ( tileID & kTMXTileDiagonalFlag ) {
+                        auto flag = tileID & (kTMXTileHorizontalFlag | kTMXTileVerticalFlag);
+                        // handle the 4 diagonally flipped states.
+                        if (flag == kTMXTileHorizontalFlag) {
+                            sprite->setRotation(90.0f);
+                        } else if (flag == kTMXTileVerticalFlag) {
+                            sprite->setRotation(270.0f);
+                        } else if (flag == (kTMXTileVerticalFlag | kTMXTileHorizontalFlag)) {
+                            sprite->setRotation(90.0f);
+                            sprite->setFlippedX(true);
+                        } else {
+                            sprite->setRotation(270.0f);
+                            sprite->setFlippedX(true);
+                        }
+                    } else {
+                        if (tileID & kTMXTileHorizontalFlag) {
+                            sprite->setFlippedX(true);
+                        }
+
+                        if (tileID & kTMXTileVerticalFlag) {
+                            sprite->setFlippedY(true);
+                        }
+                    }
+                    return sprite;
                 }
             }
         }
 
-    auto gid = node->getKeyAsInt("gid");
     char buffer[128];
-    sprintf(buffer, "%04d", gid - 1);  // tile's in tileset start a 0
+    sprintf(buffer, "%04d", ID - 1 );  // tile's in tileset start a 0
     //See Header file on using .png or .jpeg
     #ifdef USE_EXTENSION
-    auto gid = node->getKeyAsInt("gid");
-    sprintf(buffer, "%04d%s", gid - 1 , USE_EXTENSION );
+    sprintf(buffer, "%04d%s", ID , USE_EXTENSION );
     #else
-    sprintf(buffer, "%04d", gid - 1);  // tile's in tileset start a 0
+    sprintf(buffer, "%04d", ID - 1);  // tile's in tileset start a 0
     #endif
+
     sprite = Sprite::createWithSpriteFrameName(buffer);
 
+    if ( tileID & kTMXTileDiagonalFlag ) {
+        auto flag = tileID & (kTMXTileHorizontalFlag | kTMXTileVerticalFlag);
+        // handle the 4 diagonally flipped states.
+        if (flag == kTMXTileHorizontalFlag) {
+            sprite->setRotation(90.0f);
+        } else if (flag == kTMXTileVerticalFlag) {
+            sprite->setRotation(270.0f);
+        } else if (flag == (kTMXTileVerticalFlag | kTMXTileHorizontalFlag)) {
+            sprite->setRotation(90.0f);
+            sprite->setFlippedX(true);
+        } else {
+            sprite->setRotation(270.0f);
+            sprite->setFlippedX(true);
+        }
+    } else {
+        if (tileID & kTMXTileHorizontalFlag) {
+            sprite->setFlippedX(true);
+        }
+
+        if (tileID & kTMXTileVerticalFlag) {
+            sprite->setFlippedY(true);
+        }
+    }
 
     return sprite;
 }
@@ -1458,15 +1515,27 @@ void QuickTileMap::BuildTileMap( void )
 
                 //Start GID Sprite Animation and all that good stuff
                 if ( smartNode->keyExist("gid") ) {
+
                     Sprite *sprite = GetAnimation(smartNode);
 
+
+
                     auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
-                    sprite->setAnchorPoint(Vec2(0.5,0.5));
-                    sprite->setScale(size.x / tileWidth, size.y / tileHeight);
-                    sprite->setPosition(smartNode->getKeyAsFloat("x") + size.x / 2 ,-smartNode->getKeyAsFloat("y") +  size.y / 2  + mapSize.height);
+
+                    if ( smartNode->keyExist("rotation") ) {
+                        sprite->setAnchorPoint(Vec2(0.0,0.0));
+                        sprite->setRotation(smartNode->getKeyAsFloat("rotation"));
+                        sprite->setScale(size.x / tileWidth, size.y / tileHeight);
+                        sprite->setPosition(smartNode->getKeyAsFloat("x")   ,-smartNode->getKeyAsFloat("y")    + mapSize.height);
+                    } else {
+                        sprite->setAnchorPoint(Vec2(0.5, 0.5));
+                        sprite->setScale(size.x / tileWidth, size.y / tileHeight);
+                        sprite->setPosition(smartNode->getKeyAsFloat("x") + size.x / 2 ,-smartNode->getKeyAsFloat("y") +  size.y / 2  + mapSize.height);
+                    }
+
                     sprite->setColor(colour3B);
                     sprite->setOpacity(opacity);
-                    sprite->setRotation(smartNode->getKeyAsFloat("rotation"));
+
 
                     //Actions Properties Generator
                     CreateActions(smartNode , sprite);
@@ -1521,10 +1590,10 @@ void QuickTileMap::BuildTileMap( void )
                         std::string yourText = object->getKeyAsString("value"); //value is always data it was converted in ConcatenateData() because of \r\n
                         //AXLOG("yourString >> %s", yourString.c_str());
                         Label* bitmapText = CreateTextLabel(yourText);
-                        bitmapText->setContentSize(Vec2(width,height));
+                        bitmapText->setContentSize(Vec2(width,height ));
                         bitmapText->setBMFontSize(pixalSize);
-                        bitmapText->setAnchorPoint(Vec2(0,1));
-                        bitmapText->setPosition( x ,  -y  +  mapSize.height ); // Should make macro
+                        bitmapText->setAnchorPoint(Vec2(0,0));
+                        bitmapText->setPosition( x ,  -y   +  mapSize.height  - height ); // Should make macro
                         bitmapText->setRotation(smartNode->getKeyAsFloat("rotation"));
                         if ( object->keyExist( "color") ) {
                             auto colour = GetObjectColour(object);

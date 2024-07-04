@@ -13,11 +13,11 @@
             "scaleInEditor": 1
         },
         "Map01.tmx": {
-            "scale": 0.75,
-            "selectedLayer": 3,
+            "scale": 0.33,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 712,
-                "y": 1487.3333333333335
+                "x": 681.8181818181819,
+                "y": 1378.787878787879
             }
         },
         "Map01.tmx#TileMap": {
@@ -25,18 +25,16 @@
             "scaleInEditor": 1
         },
         "Map02.tmx": {
-            "expandedObjectLayers": [
-                16
-            ],
             "scale": 0.75,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 550.6666666666665,
-                "y": 972.6666666666666
+                "x": 656,
+                "y": 1428
             }
         },
         "Map02.tmx#TileMap": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "Map03.tmx": {
             "expandedObjectLayers": [
@@ -59,7 +57,7 @@
             "scaleInEditor": 1
         }
     },
-    "frame.defaultDuration": 260,
+    "frame.defaultDuration": 120,
     "last.imagePath": "C:/Users/Admin/Documents/QuickTileMap/GAME_ASSITS",
     "last.objectTypesPath": "C:/Users/Admin/Documents/QuickTileMap/Content/Maps/propertytypes.json",
     "map.lastUsedFormat": "tmx",
@@ -70,7 +68,7 @@
         "Map01.tmx"
     ],
     "project": "NewProject.tiled-project",
-    "property.type": "Action",
+    "property.type": "ActionTwo",
     "recentFiles": [
         "Map01.tmx",
         "Map02.tmx",

@@ -194,6 +194,13 @@
             <key type="filename">Tiles/0006.png</key>
             <key type="filename">Tiles/0007.png</key>
             <key type="filename">Tiles/0008.png</key>
+            <key type="filename">Tiles/0009.png</key>
+            <key type="filename">Tiles/0010.png</key>
+            <key type="filename">Tiles/0011.png</key>
+            <key type="filename">Tiles/0012.png</key>
+            <key type="filename">Tiles/0013.png</key>
+            <key type="filename">Tiles/0014.png</key>
+            <key type="filename">Tiles/0015.png</key>
             <key type="filename">Tiles/0032.png</key>
             <key type="filename">Tiles/0033.png</key>
             <key type="filename">Tiles/0034.png</key>
@@ -225,7 +232,6 @@
             <key type="filename">Tiles/0128.png</key>
             <key type="filename">Tiles/0130.png</key>
             <key type="filename">Tiles/0131.png</key>
-            <key type="filename">Tiles/0135.png</key>
             <key type="filename">Tiles/0162.png</key>
             <key type="filename">Tiles/0163.png</key>
             <key type="filename">Tiles/0164.png</key>
