@@ -40,7 +40,7 @@
    <text wrap="1">SmartNode 
 TileMap</text>
   </object>
-  <object id="18" gid="33" x="512" y="1152" width="64" height="64" rotation="-90">
+  <object id="18" gid="33" x="448" y="1152" width="64" height="64">
    <properties>
     <property name="Action001" type="class" propertytype="ActionTwo">
      <properties>
@@ -95,41 +95,6 @@ TileMap</text>
    </properties>
   </object>
   <object id="27" gid="10" x="768" y="914.788" width="212" height="212"/>
-  <object id="29" gid="37" x="124" y="1100" width="170" height="170">
-   <properties>
-    <property name="Action001" type="class" propertytype="Action">
-     <properties>
-      <property name="ActionType" propertytype="ActionType" value="Repeat"/>
-      <property name="Duration" type="float" value="5"/>
-      <property name="Times" type="int" value="10"/>
-      <property name="X" type="float" value="100"/>
-     </properties>
-    </property>
-    <property name="Action002" type="class" propertytype="ActionTwo">
-     <properties>
-      <property name="Action1" type="class" propertytype="Action">
-       <properties>
-        <property name="ActionType" propertytype="ActionType" value="RotateBy"/>
-        <property name="Angle" type="float" value="-360"/>
-        <property name="Duration" type="float" value="1"/>
-       </properties>
-      </property>
-      <property name="Action2" type="class" propertytype="Action">
-       <properties>
-        <property name="ActionType" propertytype="ActionType" value="MoveBy"/>
-        <property name="Duration" type="float" value="1"/>
-        <property name="X" type="float" value="-100"/>
-       </properties>
-      </property>
-     </properties>
-    </property>
-    <property name="Action003" type="class" propertytype="Action">
-     <properties>
-      <property name="ActionType" propertytype="ActionType" value="Remove Self"/>
-     </properties>
-    </property>
-   </properties>
-  </object>
  </objectgroup>
  <imagelayer id="17" name="Image Layer 1"/>
  <group id="18" name="Group Layer 1"/>

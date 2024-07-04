@@ -4,13 +4,6 @@
 
 #include "SmartNode.h"
 
-
-
-
-
-
-
-
 /**************************************************************************************************
  * getChild()                                                                                     *
  **************************************************************************************************
@@ -24,8 +17,6 @@ SmartNode* SmartNode::getChild( void ) {
     }
     return nullptr; // Out of bounds
 }
-
-
 
 
 /**************************************************************************************************
@@ -91,15 +82,14 @@ SmartNode* SmartNode::getChildById(int tag, bool searchNodes) {
                 return child;
             }
         }
-        //AXLOG("Not found getChildByTag(ID,1) for recursion search.");
     } else {
 
-        if ( this->tag == tag) {
+        if ( this->tag == tag ) {
             return this; // Found the node with the specified name
         }
 
-        for (SmartNode* child : children) {
-            SmartNode* foundChild = child->getChildById( tag , true);
+        for ( SmartNode* child : children ) {
+            SmartNode* foundChild = child->getChildById( tag , true );
             if (foundChild) {
                 return foundChild; // Recurse into child nodes
             }
@@ -117,7 +107,7 @@ SmartNode* SmartNode::getChildById(int tag, bool searchNodes) {
  **************************************************************************************************
  * @return SmartNode                                                                              *
  *************************************************************************************************/
-SmartNode* SmartNode::addChild(SmartNode* child) {
+SmartNode* SmartNode::addChild( SmartNode* child ) {
     children.push_back(child); // Add the child to the vector
     child->parentNode = this; // Set the parent node
     return child;
@@ -454,6 +444,32 @@ std::vector<SmartNode*> SmartNode::getAllChildrenByName( const std::string& name
 }
 
 
+/*************************************************************************************************
+* getVectorOfChildrenByName()                                                                    *
+* ************************************************************************************************
+* Gets more the one name                                                                         *
+* Usage getVectorOfChildrenByName(  { "name1","Name2","Name3" }  );                              *
+* Must have curly brace's or pass a std::vector                                                  *
+* @return bool                                                                                   *
+**************************************************************************************************/
+std::vector<SmartNode*> SmartNode::getVectorOfChildrenByName(const std::vector<std::string>& names , bool reverseOrder ) {
+    std::vector<SmartNode*> result;
+    for (SmartNode* child : children) {
+        for (const auto& name : names) {
+            if (child->name == name) {
+                result.push_back(child);
+            }
+        }
+    }
+
+    if( reverseOrder ) {
+        std::reverse(result.begin(), result.end());
+    }
+
+    return result;
+}
+
+
 
 /**************************************************************************************************
  * getParent()                                                                                    *
@@ -635,11 +651,6 @@ void  SmartNode::cleanUpNodes(void) {
         child->cleanUpNodes(); // Recursive call
     }
 }
-
-
-
-
-
 
 
 /**************************************************************************************************/
@@ -844,28 +855,5 @@ bool SmartNode::deleteKeyFromStorage( const std::string& key ) {
 
 
 
-/*************************************************************************************************
-* getVectorOfChildrenByName()                                                                    *
-* ************************************************************************************************
-* Gets more the one name                                                                         *
-* Usage getVectorOfChildrenByName(  { "name1","Name2","Name3" }  );                              *
-* Must have curly brace's or pass a std::vector                                                  *
-* @return bool                                                                                   *
-**************************************************************************************************/
-std::vector<SmartNode*> SmartNode::getVectorOfChildrenByName(const std::vector<std::string>& names , bool reverseOrder ) {
-    std::vector<SmartNode*> result;
-    for (SmartNode* child : children) {
-        for (const auto& name : names) {
-            if (child->name == name) {
-                result.push_back(child);
-            }
-        }
-    }
 
-    if( reverseOrder ) {
-        std::reverse(result.begin(), result.end());
-    }
-
-    return result;
-}
 

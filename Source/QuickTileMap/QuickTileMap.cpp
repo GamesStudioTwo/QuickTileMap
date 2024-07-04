@@ -7,13 +7,11 @@ const unsigned FLIPPED_HORIZONTALLY_FLAG = 0x80000000;
 const unsigned FLIPPED_VERTICALLY_FLAG   = 0x40000000;
 const unsigned FLIPPED_DIAGONALLY_FLAG   = 0x20000000;
 
-
-
 #include "QuickTileMap.h"
 
 
 /**************************************************************************************************
- * createCamera                                                                                   *
+ * createNode                                                                                     *
  **************************************************************************************************
  * Axmol create() function                                                                        *
   **************************************************************************************************/
@@ -51,7 +49,7 @@ bool QuickTileMap::init()  {
  **************************************************************************************************
  * Remaps coordinates to another coordinate system                                                *
  * so we can map from 0.0 to 1.0 -> 0 to 255 or 0.0 to 1.0 -> 0.0 to -255 to reverse coordinates  *
- * used in things like setting setOpacity 0 to 255 , sprite->setAnchorPoint that use 0 to 1       *
+ * used in things like setting setOpacity 0 to 255, sprite->setAnchorPoint that use 0 to 1        *
  **************************************************************************************************/
 float QuickTileMap::MapTo(float x, float in_min, float in_max, float out_min, float out_max)
 {
@@ -146,6 +144,7 @@ std::string QuickTileMap::CleanXmlSting(std::string xmlTag) {
  * @param string, token                                                                           *
  * @return std::vector<String>                                                                    *
  * usage auto myVector = StringToVector(textString,',');                                          *
+ * you will use it when it come's to getting polygon or ployline's , etc for physics & stuff      *
  **************************************************************************************************/
 std::vector<std::string> QuickTileMap::StringToVector( std::string string, char token )
 {
@@ -162,13 +161,13 @@ std::vector<std::string> QuickTileMap::StringToVector( std::string string, char 
 /**************************************************************************************************
  * StripToVector                                                                                  *
  **************************************************************************************************
- * Strops a string to std::vector<std::string>data in the format                                  *
+ * Strips a string to std::vector<std::string>data in the format                                  *
  * TAG                                                                                            *
  * DATA                                                                                           *
  * so you can compare the tag in a loop                                                           *
  * for(int i =0; i < data.size(); i+=2 ) {                                                        *
  * TAG[i] = "THE TAG";                                                                            *
- * TAG[i+1] = "YTOUR DATA";                                                                       *
+ * TAG[i+1] = "YOUR DATA";                                                                       *
  * }                                                                                              *
  *************************************************************************************************/
 std::vector<std::string> QuickTileMap::StripToVector( std::string dataStream )
@@ -250,7 +249,7 @@ std::vector<std::string> QuickTileMap::ExtractData(const std::string& input , bo
  **************************************************************************************************
  * this function rips data in to storage on SmartNode                                             *
  * height, width , image, tile, etc                                                               *
- * getFromStorage("width")->AsFloat();                                                            *
+ * float myFloat node->getKeyAsFloat( "width" );                                                  *
  *************************************************************************************************/
 std::map<std::string,std::string> QuickTileMap::StripToMap( std::string dataStream )
 {
@@ -267,7 +266,7 @@ std::map<std::string,std::string> QuickTileMap::StripToMap( std::string dataStre
 /**************************************************************************************************
  * GetFirstTag                                                                                    *
  **************************************************************************************************
- * gets first tag at the  begin of xml                                                            *
+ * Gets first tag at the begin of xml, map, tileset, properties, animation, objectgroup, layer,etc*
  **************************************************************************************************/
 std::string QuickTileMap::GetFirstTag( std::string& stringTag) {
     size_t firstNonSpace = stringTag.find_first_not_of(' ');
@@ -302,7 +301,7 @@ int QuickTileMap::GetXmlIndents(const std::string& str) {
 /**************************************************************************************************
  * GetFirstTagLeveSpace                                                                           *
  **************************************************************************************************
- * gets first tag at levse the indenta of xml                                                     *
+ * gets first tag at leaves the indent of xml                                                     *
  **************************************************************************************************/
 std::string QuickTileMap::GetFirstTagLeveSpace( std::string& stringTag) {
     size_t firstNonSpace = stringTag.find_first_not_of(' ');
@@ -615,10 +614,11 @@ void QuickTileMap::DecryptTileData( SmartNode* node )  {
 
 
 /**************************************************************************************************
- * AddRectangleToList                                                                             *
+ * AddExtraDataToNodes                                                                            *
  **************************************************************************************************
- * Adds a rectangle/ keyword to the nodes so you dont have to scan for noting or dont exsit       *
- * it just seems to make more sence. when query a node type                                       *
+ * Adds a rectangle/ keyword to the nodes so you don't have to scan for noting or dont exsit      *
+ * it just seems to make more sense. when query a node type. allso adds shapeID ShapeName         *
+ * for easy way to search for things                                                              *
  **************************************************************************************************/
 void QuickTileMap::AddExtraDataToNodes( void ) {
 
@@ -750,8 +750,6 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
         AXLOG("Error File empty");
         return 0;
     }
-
-
 
 
     // Process the FileData
