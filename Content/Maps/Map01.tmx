@@ -105,7 +105,7 @@ TileMap</text>
  <group id="21" name="Group Layer 2">
   <layer id="1" name="Tile Layer 1" width="30" height="20">
    <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjALSABOVMSn2sjIwOFDqfqAZCqTaSy0wai/palXw6MElN5T9O5ztZaWCnUAzEki1dyDKKwAofAGR
+   eJxjYBgFo2AUjALSABOVMSn2sjIwOFDqfqAZCqTaSy0wai/palXw6MElN5T9O5ztZaWCnUAzEki1l97llTMQAwApiAHU
   </data>
   </layer>
  </group>
