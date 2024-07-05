@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="23" nextobjectid="36">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="64" tileheight="64" infinite="0" nextlayerid="24" nextobjectid="36">
  <tileset firstgid="1" name="TileMap" tilewidth="64" tileheight="64" tilecount="1024" columns="32">
   <image source="../../GAME_ASSITS/TileMap.png" width="2048" height="2048"/>
   <tile id="9">
@@ -33,7 +33,6 @@
    </animation>
   </tile>
  </tileset>
- <imagelayer id="17" name="Image Layer 1"/>
  <group id="18" name="Group Layer 1">
   <group id="22" name="Group Layer 3">
    <objectgroup id="16" name="Object Layer 1">
@@ -100,26 +99,13 @@ TileMap</text>
     </object>
     <object id="27" gid="10" x="780.295" y="907.788" width="163.786" height="163.786"/>
     <object id="30" gid="10" x="332.583" y="905.952" width="163.786" height="163.786"/>
-    <object id="31" x="1024" y="1088" width="256" height="192"/>
-    <object id="32" x="176" y="1162.67">
-     <polyline points="0,0 49.3333,-184 152,-157.333 142.667,17.3333 342.667,5.33333 441.333,44"/>
-    </object>
-    <object id="33" x="742.667" y="1137.33">
-     <polygon points="0,0 -40,64 81.3333,76"/>
-    </object>
-    <object id="34" x="885.333" y="1146.67" width="74.6667" height="69.3333">
-     <ellipse/>
-    </object>
-    <object id="35" x="837.333" y="1160">
-     <point/>
-    </object>
    </objectgroup>
   </group>
  </group>
  <group id="21" name="Group Layer 2">
   <layer id="1" name="Tile Layer 1" width="30" height="20">
    <data encoding="base64" compression="zlib">
-   eJxzZiAfKJKAKQXkmEeKelq4G5t+WoQNIXtx2UNK/BHjXkU0NjX9Rqy76JkekWlS9FHiBnLtpRSg28tEZUyKvawMDA6U+gdohgKp9lILEGMvjD1qLwSo4DEDl9xQ9u9wshcZQ/MvxQBoRgIhPyCXs/Qqr9DtBQBdFA76
+   eJxjYBgFo2AUjALSABOVMSn2sjIwOFDqfqAZCqTaSy0wai/palXw6MElN5T9O5ztZaWCnUAzEki1dyDKKwAofAGR
   </data>
   </layer>
  </group>

@@ -1284,8 +1284,6 @@ void QuickTileMap::CreateActions( SmartNode* properties , Sprite* sprite )
 void QuickTileMap::BuildTileMap( SmartNode* rootNode )
 {
 
-
-
 #ifdef USE_Z_ORDER
     auto tileMapNodes = map->getVectorOfChildrenByName( { "objectgroup", "layer" } , false);  // false Not to reverse the order
 #else
@@ -1299,8 +1297,6 @@ void QuickTileMap::BuildTileMap( SmartNode* rootNode )
             if(!node->keyExist("visible"))
               BuildTileMap(node);
          }
-
-
 
         /** Do something with an imagelayer **/
         if ( node->getName() == "imagelayer" ) {
