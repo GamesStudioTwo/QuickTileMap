@@ -15,6 +15,12 @@
 #define  ID_GID           6
 
 
+// Bits on the far end of the 32-bit global tile ID are used for tile flags
+const unsigned FLIPPED_HORIZONTALLY_FLAG = 0x80000000;
+const unsigned FLIPPED_VERTICALLY_FLAG   = 0x40000000;
+const unsigned FLIPPED_DIAGONALLY_FLAG   = 0x20000000;
+
+
 /**
  * if you set Texture packer, to "Trim Sprite name" to enabled all sprites are "0000", "0001", etc
  * else Uncomment below if you want to use 0000.png or 0000.jpg
@@ -63,7 +69,7 @@ public:
 
     /******* Tilemap Variables ************/
     std::string mapFileName;
-    bool  LoadMap(std::string fileName);
+    SmartNode*  LoadMap(std::string fileName);
 
     /******* Tilemap Processing ************/
     SmartNode *root;         // Root of SmartNode
@@ -79,6 +85,7 @@ public:
         delete root;
     }
 
+
     //Functions
     Sprite * GetAnimation( SmartNode*  node );
     Label*   CreateTextLabel( std::string text );
@@ -89,9 +96,28 @@ public:
     std::vector<SmartNode*> GetPropertiesAsVector( SmartNode * node );
     std::vector<SmartNode*> GetAllPropertiesAsVector( SmartNode * node );
 
+
+
     //Actions properties
     void CreateActions(SmartNode* properties , Sprite* sprite);
     FiniteTimeAction* GetAction( std::map<std::string,std::string> &action , Sprite* sprite );
+
+    /**
+     Helper function to get Physics but not needed just copy from function into code
+     you just call yournode->GetObjectGroup() then just loop
+     **/
+    SmartNode* GetPhysics ( SmartNode* node ) {
+         uint32_t gid =  node->getKeyAsInt("gid") ; //decrypt ID
+         gid &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG | FLIPPED_DIAGONALLY_FLAG);
+         gid = (static_cast<int>( ( gid & kTMXFlippedMask) ) );
+         gid--;
+         auto tile = tileSet->getChildById(gid);
+         if ( tile ) {
+             return tile->GetObjectGroup();
+         }
+         return nullptr;
+    }
+
 
     Size visibleSize;
     Vec2 origin;

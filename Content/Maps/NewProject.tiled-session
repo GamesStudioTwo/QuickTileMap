@@ -12,12 +12,21 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "#HelloWorld": {
+            "scaleInEditor": 1
+        },
         "Map01.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "expandedGroupLayers": [
+                18
+            ],
+            "expandedObjectLayers": [
+                16
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 681.8181818181819,
-                "y": 1378.787878787879
+                "x": 789.3333333333333,
+                "y": 2487.333333333333
             }
         },
         "Map01.tmx#TileMap": {
@@ -52,6 +61,45 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Physics.1tmx.tmx": {
+            "scale": 0.75,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": -332.66666666666663,
+                "y": -637.3333333333333
+            }
+        },
+        "Physics.1tmx.tmx#HelloWorld": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "Physics1.tmx": {
+            "scale": 3.2953124999999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 30.19440493124704,
+                "y": 30.953058321479375
+            }
+        },
+        "Physics1.tmx#HelloWorld": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "TestMap.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 0.33,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1272.7272727272727,
+                "y": 1165.151515151515
+            }
+        },
+        "TestMap.tmx#TileMap": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "TileMap.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -60,10 +108,12 @@
     "frame.defaultDuration": 231,
     "last.imagePath": "C:/Users/Admin/Documents/QuickTileMap/GAME_ASSITS",
     "last.objectTypesPath": "C:/Users/Admin/Documents/QuickTileMap/Content/Maps/propertytypes.json",
+    "map.fixedSize": true,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": null,
     "map.tileHeight": 64,
     "map.tileWidth": 64,
+    "map.width": 40,
     "openFiles": [
         "Map01.tmx"
     ],
@@ -71,6 +121,9 @@
     "property.type": "Action",
     "recentFiles": [
         "Map01.tmx",
+        "TestMap.tmx",
+        "Physics1.tmx",
+        "Physics.1tmx.tmx",
         "Map02.tmx",
         "Map03.tmx",
         "TileMap.tsx"
@@ -80,5 +133,6 @@
     "tileset.tileSize": {
         "height": 64,
         "width": 64
-    }
+    },
+    "tileset.type": 0
 }
