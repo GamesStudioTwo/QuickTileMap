@@ -150,6 +150,13 @@ public:
     }
 
 
+    SmartNode*  GetObjectGroup( void ) {
+        return this->getChildByName("objectgroup",1);
+    }
+
+
+
+
 
     // Destructor to free memory when the SmartNode is deleted
     ~SmartNode() {

@@ -2,10 +2,6 @@
 // Created by Admin on 19/06/2024.
 //
 
-// Bits on the far end of the 32-bit global tile ID are used for tile flags
-const unsigned FLIPPED_HORIZONTALLY_FLAG = 0x80000000;
-const unsigned FLIPPED_VERTICALLY_FLAG   = 0x40000000;
-const unsigned FLIPPED_DIAGONALLY_FLAG   = 0x20000000;
 
 #include "QuickTileMap.h"
 
@@ -33,8 +29,6 @@ bool QuickTileMap::init()  {
 
     setTag(ID_TILE_MAP_NODE);
     setName("ID_TILE_MAP_NODE");
-
-
 
 
     visibleSize = _director->getVisibleSize();
@@ -622,8 +616,8 @@ void QuickTileMap::DecryptTileData( SmartNode* node )  {
  * it just seems to make more sense. when query a node type. allso adds shapeID ShapeName         *
  * for easy way to search for things                                                              *
  **************************************************************************************************/
-void QuickTileMap::AddExtraDataToNodes( void ) {
-
+void QuickTileMap::AddExtraDataToNodes( void )
+{
 //#define  ID_RECTANGLE     0
 //#define  ID_POINT         1
 //#define  ID_POLYGON       2
@@ -646,7 +640,7 @@ void QuickTileMap::AddExtraDataToNodes( void ) {
         obj = fix->getChildByName("point/");
         if( obj ) { continue; }
 
-        fix->addChild("rectangle/",-1);
+        fix->addChild("rectangle",-1);
     }
 
     nodes.clear();
@@ -664,6 +658,7 @@ void QuickTileMap::AddExtraDataToNodes( void ) {
         if(point) {
             obj->addToStorage("shapeID",   "1");
             obj->addToStorage("shapeName","POINT");
+            point->setName("point");
             continue;
         }
 
@@ -685,6 +680,7 @@ void QuickTileMap::AddExtraDataToNodes( void ) {
         if(ellipse) {
             obj->addToStorage("shapeID",   "4");
             obj->addToStorage("shapeName","ELLIPSE");
+            ellipse->setName("ellipse");
             continue;
         }
 
@@ -700,12 +696,7 @@ void QuickTileMap::AddExtraDataToNodes( void ) {
             obj->addToStorage("shapeName", "GID");
         }
     }
-
-
-
 }
-
-
 
 
 /**************************************************************************************************
@@ -713,7 +704,7 @@ void QuickTileMap::AddExtraDataToNodes( void ) {
  **************************************************************************************************
  * Load's a XML file and trims the \r\n                                                           *
  **************************************************************************************************/
-bool QuickTileMap::LoadMap( std::string fileName ) {
+SmartNode* QuickTileMap::LoadMap( std::string fileName ) {
 
      //Extra Speed no need to reload data or decrypt Tile compression alredy done
      //if map is the same
@@ -723,24 +714,18 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
          //Now we build and Display the TileMap Skip reloading
          delete root;
          root = SmartNode::create("root", -1);  // create rootNode
-         BuildTileMap();
-         return 1;
+         BuildTileMap(map);
+         return root;
     }  else  {
         root = SmartNode::create("root", -1);  // create rootNode
     }
 
-
     mapFileName = FileUtils::getInstance()->fullPathForFilename(fileName.c_str());
-
-
 
     if ( FileUtils::getInstance()->isFileExist(mapFileName) == false ) {
          AXLOG("File Error Dose not Exsit: %s", fileName.c_str());
-        return false;
+        return nullptr;
     }
-
-
-
 
     ssize_t DATASTREAM_SIZE = 0;
     auto fullpath = FileUtils::getInstance()->fullPathForFilename(mapFileName.c_str());
@@ -748,11 +733,10 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
     FileUtils::getInstance()->getContents(fullpath, &fileData);
     DATASTREAM_SIZE = fileData.size();
 
-    if (DATASTREAM_SIZE <= 0) {
+    if ( DATASTREAM_SIZE <= 0 ) {
         AXLOG("Error File empty");
         return 0;
     }
-
 
     // Process the FileData
     std::istringstream iss(fileData);
@@ -768,8 +752,6 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
     fileData.clear();
 
     xmlData = ConcatenateData(xmlData);
-
-
 
     /**
      * Build the SmartNode
@@ -831,11 +813,26 @@ bool QuickTileMap::LoadMap( std::string fileName ) {
 
     root->cleanUpNodes();  // Remove all /properties, /property.  free's the memory
 
+    //Creating Shortcut to map & tileset, you can create your owen as well.
+    tileSet = root->getChildByName("tileset", 1);  // true = recuses find
+    map = root->getChildByName("map", true);       // true = recuses find
+
+
+    //Set Background colour
+    auto colour = map->getKeyAsString("backgroundcolor");
+    if (!colour.empty()) {
+        auto colour4B = HTMLtoColour(colour);
+        float r = MapTo(colour4B.r, 0.0,255.0 , 0.01 , 1.0 );
+        float g = MapTo(colour4B.g, 0.0,255.0 , 0.01 , 1.0 );
+        float b = MapTo(colour4B.b, 0.0,255.0 , 0.01 , 1.0 );
+        Director::getInstance()->setClearColor( Color4F( r , g,  b, 1) );
+    }
+
 
     //Now we build and Display the TileMap
-      BuildTileMap();
+      BuildTileMap(map);
 
-    return true;
+    return root;
 }
 
 
@@ -1284,37 +1281,26 @@ void QuickTileMap::CreateActions( SmartNode* properties , Sprite* sprite )
 *    }                                                                                            *
 **************************************************************************************************/
 
-void QuickTileMap::BuildTileMap( void )
+void QuickTileMap::BuildTileMap( SmartNode* rootNode )
 {
-    //Creating Shortcut to map & tileset, you can create your owen as well.
-    tileSet = root->getChildByName("tileset", 1);  // true = recuses find
-    map = root->getChildByName("map", true);       // true = recuses find
 
-    //Set Background colour
-    auto colour = map->getKeyAsString("backgroundcolor");
-    if (!colour.empty()) {
-        auto colour4B = HTMLtoColour(colour);
-        float r = MapTo(colour4B.r, 0.0,255.0 , 0.01 , 1.0 );
-        float g = MapTo(colour4B.g, 0.0,255.0 , 0.01 , 1.0 );
-        float b = MapTo(colour4B.b, 0.0,255.0 , 0.01 , 1.0 );
-        Director::getInstance()->setClearColor( Color4F( r , g,  b, 1) );
-    }
 
 
 #ifdef USE_Z_ORDER
     auto tileMapNodes = map->getVectorOfChildrenByName( { "objectgroup", "layer" } , false);  // false Not to reverse the order
 #else
-    auto tileMapNodes = map->getVectorOfChildrenByName({ "objectgroup", "layer", "imagelayer", "group"},true);  // true to reverse the order
+     auto tileMapNodes = rootNode->getVectorOfChildrenByName({ "objectgroup", "layer", "imagelayer", "group"},true);  // true to reverse the order
 #endif
 
-    //Start TileMap Building
-    for ( auto node: tileMapNodes ) {
+    for( auto node  : tileMapNodes) {
 
-
-        /** Do something with an group **/
         if ( node->getName() == "group" ) {
-           // AXLOG("Found Group");
-        }
+            // Recursively process child nodes
+            if(!node->keyExist("visible"))
+              BuildTileMap(node);
+         }
+
+
 
         /** Do something with an imagelayer **/
         if ( node->getName() == "imagelayer" ) {
@@ -1379,8 +1365,7 @@ void QuickTileMap::BuildTileMap( void )
                     tileID = node->data[tilepos];
                     ID = tileID;
 
-                    ID &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG |
-                            FLIPPED_DIAGONALLY_FLAG);
+                    ID &= ~(FLIPPED_HORIZONTALLY_FLAG | FLIPPED_VERTICALLY_FLAG | FLIPPED_DIAGONALLY_FLAG);
                     ID = (static_cast<int>((ID & kTMXFlippedMask)));
 
                     if (ID != 0) {
@@ -1448,7 +1433,6 @@ void QuickTileMap::BuildTileMap( void )
                                 tileSprite->setFlippedY(true);
                             }
                         }
-
 #ifdef USE_Z_ORDER
                         addChild(tileSprite, node->getKeyAsInt("layer") );
 #else
@@ -1476,6 +1460,7 @@ void QuickTileMap::BuildTileMap( void )
             auto tileHeight = map->getKeyAsInt("tileheight");
             Vec2 mapSize = Vec2(width * tileWidth, height * tileHeight);
 
+
 #ifndef USE_Z_ORDER
             Node *objectgroup = Node::create();
             objectgroup->setTag(node->getKeyAsInt("layer"));
@@ -1483,7 +1468,7 @@ void QuickTileMap::BuildTileMap( void )
             objectgroup->setContentSize(mapSize);
             objectgroup->setPosition(origin.x, origin.y);
 
-            if ( node->keyExist("visible") ) {
+            if (node->keyExist("visible")) {
                 objectgroup->setVisible(false);
             }
             addChild(objectgroup, node->getKeyAsInt("layer"));
@@ -1504,83 +1489,102 @@ void QuickTileMap::BuildTileMap( void )
                     colour3B.r = colour4B.r;
                     colour3B.g = colour4B.g;
                     colour3B.b = colour4B.b;
-                    opacity    = MapTo(colour4B.a , 255.0,0.0 , 0.0 , 255.0 );
+                    opacity = MapTo(colour4B.a, 255.0, 0.0, 0.0, 255.0);
                 }
-                if (colour4B.a != 1 )
+                if (colour4B.a != 1)
                     opacity = colour4B.a;
             }
 
-            //Objects
+            /**  Get gid Objects **/
             auto smartNodes = node->getVectorOfChildrenByName({"object"});
 
+            for (auto smartNode: smartNodes) {
 
-
-            for ( auto smartNode: smartNodes ) {
-
-                //Start GID Sprite Animation and all that good stuff
-                if ( smartNode->keyExist("gid") ) {
+                //Start GID Sprite Animation, Physics and all that good stuff
+                if (smartNode->keyExist("gid")) {
 
                     Sprite *sprite = GetAnimation(smartNode);
 
-                    if ( smartNode->keyExist("visible") ) {
+                    if (smartNode->keyExist("visible")) {
                         sprite->setVisible(false);
-                     }
+                    }
 
-                    auto size = Vec2(smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height"));
+                    auto size = Vec2(smartNode->getKeyAsFloat("width"),
+                                     smartNode->getKeyAsFloat("height"));
 
-                    if ( smartNode->keyExist("rotation") ) {
-                        sprite->setAnchorPoint(Vec2(0.0,0.0));
+                    if (smartNode->keyExist("rotation")) {
+                        sprite->setAnchorPoint(Vec2(0.0, 0.0));
                         sprite->setRotation(smartNode->getKeyAsFloat("rotation"));
                         sprite->setScale(size.x / tileWidth, size.y / tileHeight);
-                        sprite->setPosition(smartNode->getKeyAsFloat("x")   ,-smartNode->getKeyAsFloat("y")    + mapSize.height);
+                        sprite->setPosition(smartNode->getKeyAsFloat("x"),
+                                            -smartNode->getKeyAsFloat("y") + mapSize.height);
                     } else {
                         sprite->setAnchorPoint(Vec2(0.5, 0.5));
                         sprite->setScale(size.x / tileWidth, size.y / tileHeight);
-                        sprite->setPosition(smartNode->getKeyAsFloat("x") + size.x / 2 ,-smartNode->getKeyAsFloat("y") +  size.y / 2  + mapSize.height);
+                        sprite->setPosition(smartNode->getKeyAsFloat("x") + size.x / 2,
+                                            -smartNode->getKeyAsFloat("y") + size.y / 2 +
+                                            mapSize.height);
                     }
 
                     sprite->setColor(colour3B);
                     sprite->setOpacity(opacity);
 
+                    //Actions from Properties. MoveTo, RotateBy, etc
+                    CreateActions(smartNode, sprite);
 
-                    //Actions Properties Generator
-                    CreateActions(smartNode , sprite);
+                    //Get Physics from Tiled tileSet
+                    auto physics = GetPhysics(smartNode);
 
-                    // Start checking if your sprite had Physics attached to it
-                    // then do your Things, how you want to add your physics here
-                    // Don't forget to check the tileSet, as tiles will carry your physics from TILED PROGRAM in "Tile Set Collision Editor"
-                    // auto tile = tileSet->getChiledByID( GID - 1 );   // tiles start a 0 so must -1 the gid
-                    //      if ( tile ) {   // you found a tile in tileset
-                    //                         // Not done yet tile may only have animation and no physics so false positive that Tile exist
-                    //                         // now do check for any physics parts
-                    //               auto anyPhysicsPartsFound = physics->getVectorOfChildrenByName({"object"});
-                    //                for( auto part : anyPhysicsPartsFound ) {
-                    //                         //Start building your Physics parts on one body
-                    //                         // This is how you build complex shapes
-                    //                }
-                    //           }
-
-
+                    if (physics) { //Remember Not all tile have physics so must check
+                        //Loop out and build to one B2body if box2d you now have complex part
+                        AXLOG("%zu", physics->getChildrenSize());
+                        for (auto physicsPart: physics->getChildren()) {
+                            AXLOG("ID:%d X:%f Y:%f Type:%s", physicsPart->getKeyAsInt("id"),
+                                  physicsPart->getKeyAsFloat("x"), physicsPart->getKeyAsFloat("y"),
+                                  physicsPart->getNext()->getName().c_str());
+                        }
+                    }
 #ifdef USE_Z_ORDER
                     addChild(sprite,node->getKeyAsInt("layer"));
 #else
                     objectgroup->addChild(sprite);
 #endif
-                }  else {
+                } else {
 
                     /**
-                     * This Create's object's
+                     * This Creates Physics object's only, no gid number
                      **/
 
-                    /** No GID Start Physics object's Only no Sprite data **/
+                    //EZ first method speed
+                    switch (smartNode->getKeyAsInt("shapeID")) {
+                        case ID_TEXT:
+                            // AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
+                            break;
+                        case ID_RECTANGLE:
+                            // AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
+                            break;
+                        case ID_ELLIPSE:
+                            // AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
+                            break;
+                        case ID_POINT:
+                            // AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
+                            break;
+                        case ID_POLYGON:
+                            // AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
+                            break;
+                        case ID_POLYLINE:
+                            //  AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
+                            break;
+                    }
 
+                    //Else Manule get Physics
                     /**  Getting Text Move this to your owen Function if you wish to declutter **/
-                    SmartNode* object = smartNode->getChildByName(   "text");
-                    if ( object ) { // if text
+                    SmartNode *object = smartNode->getChildByName("text");
+                    if (object) { // if text
                         //This is the object part
-                        float x      = smartNode->getKeyAsFloat("x");
-                        float y      = smartNode->getKeyAsFloat("y");
-                        float width  = smartNode->getKeyAsFloat("width")  ; //My font size
+                        float x = smartNode->getKeyAsFloat("x");
+                        float y = smartNode->getKeyAsFloat("y");
+                        float width = smartNode->getKeyAsFloat("width"); //My font size
                         float height = smartNode->getKeyAsFloat("height");
                         float pixalSize = object->getKeyAsFloat("pixelsize");
 
@@ -1589,63 +1593,73 @@ void QuickTileMap::BuildTileMap( void )
                         //Loop through them and do someting with them
 
                         //Now extract your wrap , font name , etc
-                        if ( object->keyExist( "wrap") ) {
+                        if (object->keyExist("wrap")) {
                             // do wrap
                         }
 
-                        std::string yourText = object->getKeyAsString("value"); //value is always data it was converted in ConcatenateData() because of \r\n
+                        std::string yourText = object->getKeyAsString(
+                                "value"); //value is always data it was converted in ConcatenateData() because of \r\n
                         //AXLOG("yourString >> %s", yourString.c_str());
-                        Label* bitmapText = CreateTextLabel(yourText);
-                        bitmapText->setContentSize(Vec2(width,height ));
+                        Label *bitmapText = CreateTextLabel(yourText);
+                        bitmapText->setContentSize(Vec2(width, height));
                         bitmapText->setBMFontSize(pixalSize);
-                        bitmapText->setAnchorPoint(Vec2(0,0));
-                        bitmapText->setPosition( x ,  -y   +  mapSize.height  - height ); // Should make macro
+                        bitmapText->setAnchorPoint(Vec2(0, 0));
+                        bitmapText->setPosition(x,
+                                                -y + mapSize.height - height); // Should make macro
                         bitmapText->setRotation(smartNode->getKeyAsFloat("rotation"));
-                        if ( object->keyExist( "color") ) {
+                        if (object->keyExist("color")) {
                             auto colour = GetObjectColour(object);
-                            bitmapText->setColor(Color3B(colour.r,colour.g,colour.b));
+                            bitmapText->setColor(Color3B(colour.r, colour.g, colour.b));
                             bitmapText->setOpacity(colour.a);
                         }
 #ifdef USE_Z_ORDER
                         addChild(bitmapText,node->getKeyAsInt("layer"));
 #else
-                        objectgroup->addChild( bitmapText );
+                        objectgroup->addChild(bitmapText);
 #endif
                     }  // End Getting Text
 
 
-                    //Begin Physics Objects Only No sprite
-                    object = smartNode->getChildByName(   "point/");
-                    if ( object ) {
-                        // smartNode Object only
-                        auto property = GetPropertiesAsVector(smartNode);
-                        // Do your loop Thing
-                        AXLOG("You Found point");
+                    object = smartNode->getChildByName("point");
+                    if (object) { //Get Physics
+                        //AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
                     }
 
-                    object = smartNode->getChildByName(   "ellipse/");
-                    if ( object ) {
-                        AXLOG("You Found ellipse");
+                    object = smartNode->getChildByName("ellipse");
+                    if (object) { //Get Physics
+                        //AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
                     }
 
-                    object = smartNode->getChildByName(   "polygon");
-                    if ( object ) {
-                        AXLOG("You Found polygon");
+                    object = smartNode->getChildByName("polygon");
+                    if (object) { //Get Physics
+                        // AXLOG("ID:%d X:%f Y:%f Type:%s\npoints:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y") , smartNode->getNext()->getName().c_str(),smartNode->getNext()->getKeyAsChar("points"));
+                        // AXLOG("%s",object->getKeyAsChar("points"));
+                        // AXLOG("%s",smartNode->getNext()->getKeyAsChar("points"));
+                        // auto p = smartNode->getChildByName("polygon");
+                        // AXLOG("%s",p->getKeyAsChar("points"));
+                        // AXLOG("%s", object->storage["points"].c_str() );
                     }
 
-                    object = smartNode->getChildByName(   "polyline");
-                    if ( object ) {
-                        AXLOG("You Found polyline");
+                    object = smartNode->getChildByName("polyline");
+                    if (object) {  //Get Physics
+                        // AXLOG("ID:%d X:%f Y:%f Type:%s\npoints:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y") , smartNode->getNext()->getName().c_str(),smartNode->getNext()->getKeyAsChar("points"));
+                        // AXLOG("%s",object->getKeyAsChar("points"));
+                        // AXLOG("%s",smartNode->getNext()->getKeyAsChar("points"));
+                        // auto p = smartNode->getChildByName("polyline");
+                        // AXLOG("%s",p->getKeyAsChar("points"));
+                        // AXLOG("%s", object->storage["points"].c_str() );
                     }
 
 
-                    object = smartNode->getChildByName(   "rectangle/");
-                    if ( object ) {
-                        AXLOG("You Found rectangle ");
+                    object = smartNode->getChildByName("rectangle");
+                    if (object) {
+                        // AXLOG("ID:%d X:%f Y:%f Width:%f Height:%f Type:%s",smartNode->getKeyAsInt("id"),smartNode->getKeyAsFloat("x"),smartNode->getKeyAsFloat("y"),smartNode->getKeyAsFloat("width"),smartNode->getKeyAsFloat("height") , smartNode->getNext()->getName().c_str());
                     }
                 }
-
             } // End for Loop
-        } // End Objectgroupe
-    }   // End for tileMapNodes
-}
+        }
+    }
+} // End BuildTileMap();
+
+
+
