@@ -15,7 +15,7 @@ Added Features.
 2. Now supprots working with Groups in Tiled.
 3. Native support for animated tiles
 4. Your able to add your owen support without haveing to add extrax class's to store things like animation's and stuff you just pull strate out and use directly.
-5. Exelant memory magment eradicate wasted memory for verable that do not exsit, So you not making varble to store things thats are not beeing used.
+5. Exelant memory management eradicate wasted memory for verable that do not exsit, So you not making varble to store things thats are not beeing used.
 
 		Videos to help with using QuickTileMap.
 
