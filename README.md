@@ -8,7 +8,6 @@
 4. uses only 1 draw call for fast rendering utalising the sprite sheet.
 5. Save time on loading by not Reloading same data if map is the same and you just a reset the map.
 6. uses the same data structure as Tiled tmx files.
-
 Added Features.
 
 
@@ -16,6 +15,7 @@ Added Features.
 2. Now supprots working with Groups in Tiled.
 3. Native support for animated tiles
 4. Your able to add your owen support without haveing to add extrax class's to store things like animation's and stuff you just pull strate out and use directly.
+5. Exelant memory magment eradicate wasted memory for verable that do not exsit, So you not making varble to store things thats are not beeing used.
 
 		Videos to help with using QuickTileMap.
 
