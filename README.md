@@ -9,10 +9,11 @@
 5. Save time on loading by not Reloading same data if map is the same and you just a reset the map.
 
 
-Added Features
-Auto Animation added through Tilemap
-Now added Actions sequence you can build your owen simple actions on sprite's
-Now supprots working with Groups in Tiled.
+Added Features.
+
+1. Auto Animation added through Tilemap
+2. Now added Actions sequence you can build your owen simple actions on sprite's
+3. Now supprots working with Groups in Tiled.
 
 
 		Videos to help with using QuickTileMap.
