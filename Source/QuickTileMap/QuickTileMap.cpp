@@ -1287,7 +1287,7 @@ void QuickTileMap::BuildTileMap( SmartNode* rootNode )
 #ifdef USE_Z_ORDER
     auto tileMapNodes = map->getVectorOfChildrenByName( { "objectgroup", "layer" } , false);  // false Not to reverse the order
 #else
-     auto tileMapNodes = rootNode->getVectorOfChildrenByName({ "objectgroup", "layer", "imagelayer", "group"},true);  // true to reverse the order
+     auto tileMapNodes = rootNode->getVectorOfChildrenByName({ "objectgroup", "layer", "imagelayer", "group"},false);  // true to reverse the order
 #endif
 
     for( auto node  : tileMapNodes) {
@@ -1298,9 +1298,24 @@ void QuickTileMap::BuildTileMap( SmartNode* rootNode )
               BuildTileMap(node);
          }
 
+
         /** Do something with an imagelayer **/
         if ( node->getName() == "imagelayer" ) {
-           // AXLOG("Found imagelayer");
+            /**
+            auto width = map->getKeyAsInt("width");
+            auto height = map->getKeyAsInt("height");
+            auto tileWidth = map->getKeyAsInt("tilewidth");
+            auto tileHeight = map->getKeyAsInt("tileheight");
+            AXLOG("%s", node->getNext()->getKeyAsString("source").c_str() );
+            std::string image = node->getNext()->getKeyAsString("source").c_str();
+            image.erase(0,3);
+            auto imageLayer = Sprite::create(image);
+            imageLayer->setPosition(node->getKeyAsFloat("offsetx")  , node->getKeyAsFloat("offsety")  );
+            addChild(imageLayer , node->getKeyAsInt("level"));
+             **/
+             // I dont use them as they add layers and dont know where your dir for your images
+             // This is if you want image layers my maps are in /Content/Maps/ so erase 3
+             // from string for your ../Content/image.png directory remove the ../
         }
 
 
